@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>徐建硕｜保险精算与产品经营</title>
+  <meta
+    name="description"
+    content="徐建硕的个人主页，聚焦保险精算、产品设计、车险与个人非车险经营、数字化转型。"
+  />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: rgba(255, 255, 255, 0.86);
+      --text: #172033;
+      --muted: #667085;
+      --line: rgba(15, 23, 42, 0.08);
+      --blue: #1f5eff;
+      --blue-dark: #163fb5;
+      --dark: #101828;
+      --shadow: 0 18px 50px rgba(26, 39, 72, 0.09);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(31, 94, 255, 0.12), transparent 32%),
+        radial-gradient(circle at 90% 10%, rgba(67, 170, 255, 0.10), transparent 28%),
+        var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(245, 247, 250, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 76vh;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 60px;
+      padding: 88px 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(31, 94, 255, 0.08);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 6px rgba(31, 94, 255, 0.10);
+    }
+
+    h1 {
+      font-size: clamp(46px, 7vw, 78px);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+      max-width: 780px;
+    }
+
+    h1 .accent {
+      color: var(--blue);
+    }
+
+    .hero-desc {
+      margin-top: 24px;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), #3f7cff);
+      box-shadow: 0 12px 28px rgba(31, 94, 255, 0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(31, 94, 255, 0.30);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.76);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 34px;
+      min-height: 430px;
+      border-radius: 32px;
+      background:
+        linear-gradient(145deg, rgba(16, 24, 40, 0.98), rgba(30, 48, 83, 0.96));
+      color: white;
+      box-shadow: 0 30px 80px rgba(16, 24, 40, 0.24);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(61, 122, 255, 0.28);
+      filter: blur(20px);
+      right: -80px;
+      top: -70px;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(0, 211, 255, 0.12);
+      filter: blur(18px);
+      left: -60px;
+      bottom: -80px;
+    }
+
+    .profile-top,
+    .profile-list,
+    .signature {
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #3977ff, #1745bd);
+      font-size: 28px;
+      font-weight: 900;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+    }
+
+    .profile-name {
+      margin-top: 22px;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .profile-role {
+      color: rgba(255, 255, 255, 0.68);
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    .profile-list {
+      margin-top: 34px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .profile-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      font-size: 14px;
+    }
+
+    .profile-item span:first-child {
+      color: rgba(255,255,255,0.58);
+    }
+
+    .profile-item span:last-child {
+      text-align: right;
+      font-weight: 650;
+    }
+
+    .signature {
+      margin-top: 28px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.48);
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 8px;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+    }
+
+    .section-note {
+      max-width: 480px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-
