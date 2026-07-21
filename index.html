@@ -335,4 +335,198 @@
     }
 
     .card:hover {
-      transform: translateY(-
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(26, 39, 72, 0.14);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 0 50px;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        font-size: clamp(36px, 6vw, 56px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 40px 0 30px;
+      }
+
+      .hero-card {
+        min-height: auto;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: clamp(28px, 5vw, 42px);
+      }
+
+      h2 {
+        font-size: clamp(24px, 3vw, 32px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav class="container">
+      <div class="brand">
+        <span>✦</span> 徐建硕
+      </div>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#expertise">专业领域</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">
+          保险精算师 · 产品经理
+        </div>
+        <h1>
+          聚焦<span class="accent">保险创新</span>与
+          <span class="accent">数字化转型</span>
+        </h1>
+        <p class="hero-desc">
+          专注于保险精算、产品设计、车险与个人非车险经营，致力于推动保险行业的数字化升级与业务创新。
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary">查看项目</button>
+          <button class="btn btn-secondary">联系我</button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="profile-top">
+          <div class="avatar">XJ</div>
+          <div class="profile-name">徐建硕</div>
+          <div class="profile-role">保险精算师 · 产品经理</div>
+        </div>
+
+        <div class="profile-list">
+          <div class="profile-item">
+            <span>工作经验</span>
+            <span>8+ 年</span>
+          </div>
+          <div class="profile-item">
+            <span>专业领域</span>
+            <span>精算 · 产品</span>
+          </div>
+          <div class="profile-item">
+            <span>教育背景</span>
+            <span>精算学</span>
+          </div>
+          <div class="profile-item">
+            <span>项目数</span>
+            <span>15+</span>
+          </div>
+        </div>
+
+        <div class="signature">
+          不断学习，持续创新，为保险行业的未来贡献力量
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="section-head">
+        <div>
+          <div class="section-label">核心能力</div>
+          <h2>专业领域</h2>
+        </div>
+        <p class="section-note">
+          多年的保险行业经验，在精算、产品和数字化领域积累了丰富的知识和实践。
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>保险精算</h3>
+          <p>精通定价、费率厘定、成本评估和风险管理，为保险产品提供科学的精算支撑。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>产品设计</h3>
+          <p>擅长设计创新的保险产品，平衡客户需求与公司收益，推动产品市场化。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚗</div>
+          <h3>车险经营</h3>
+          <p>深入理解车险市场，掌握车险定价、渠道管理和风险控制的核心要素。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">👥</div>
+          <h3>非车险拓展</h3>
+          <p>探索健康险、财产险等非车险领域，开拓新的业务增长点和收入来源。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <h3>数字化转型</h3>
+          <p>推动保险业务的数字化升级，运用数据分析和技术创新提升运营效率。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <h3>数据分析</h3>
+          <p>运用数据驱动决策，建立分析模型，支撑业务战略和管理决策的科学化。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 徐建硕. 保险精算与产品经营.</p>
+    </div>
+  </footer>
+</body>
+</html>
