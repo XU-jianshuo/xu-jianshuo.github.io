@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://xu-jianshuo.github.io/sitemap.xml
+

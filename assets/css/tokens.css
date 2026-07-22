@@ -1,0 +1,21 @@
+:root {
+  --navy-950: #0b1f33;
+  --navy-800: #173a5e;
+  --slate-600: #5a6875;
+  --slate-300: #cbd3da;
+  --paper: #f7f4ee;
+  --white: #ffffff;
+  --gold: #a87932;
+  --gold-soft: #e7d7bb;
+  --blue-soft: #e7eef4;
+  --max-width: 1180px;
+  --reading-width: 720px;
+  --radius: 18px;
+  --shadow: 0 18px 50px rgb(11 31 51 / 10%);
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 5rem;
+}
