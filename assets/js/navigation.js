@@ -1,10 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const root = document.documentElement;
+  root.classList.add("js");
+
+  const themeButton = document.querySelector("[data-theme-toggle]");
+  const storedTheme = localStorage.getItem("site-theme");
+  if (storedTheme) root.dataset.theme = storedTheme;
+  themeButton?.setAttribute("aria-pressed", String(root.dataset.theme === "dark"));
+  themeButton?.addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    localStorage.setItem("site-theme", next);
+    themeButton.setAttribute("aria-pressed", String(next === "dark"));
+  });
+
   const toggle = document.querySelector("[data-nav-toggle]");
   const navigation = document.querySelector("[data-navigation]");
   if (!toggle || !navigation) return;
-
-  const root = document.documentElement;
-  root.classList.add("js");
 
   const closeMenu = () => {
     navigation.classList.remove("is-open");

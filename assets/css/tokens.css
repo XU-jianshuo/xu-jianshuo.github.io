@@ -1,21 +1,47 @@
 :root {
-  --navy-950: #0b1f33;
-  --navy-800: #173a5e;
-  --slate-600: #5a6875;
-  --slate-300: #cbd3da;
-  --paper: #f7f4ee;
-  --white: #ffffff;
-  --gold: #a87932;
-  --gold-soft: #e7d7bb;
-  --blue-soft: #e7eef4;
-  --max-width: 1180px;
-  --reading-width: 720px;
-  --radius: 18px;
-  --shadow: 0 18px 50px rgb(11 31 51 / 10%);
+  --ink: #171717;
+  --ink-soft: #242424;
+  --paper: #fffdf9;
+  --paper-muted: #f3f1ed;
+  --accent: #ff5a36;
+  --accent-strong: #ed3f1c;
+  --danger: #c72b1c;
+  --line: #d9d5cf;
+  --text: #1b1b1b;
+  --muted: #66625d;
+  --radius-sm: 16px;
+  --radius-md: 28px;
+  --radius-lg: 42px;
+  --shadow-card: 0 24px 70px rgb(24 20 16 / 12%);
+  --container: 1180px;
+  --reading-width: 760px;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2rem;
   --space-5: 3rem;
   --space-6: 5rem;
+
+  /* Legacy aliases retained for the existing English and project pages. */
+  --navy-950: var(--ink);
+  --navy-800: #343434;
+  --slate-600: var(--muted);
+  --slate-300: var(--line);
+  --white: #fff;
+  --gold: var(--accent);
+  --gold-soft: #ffd1c7;
+  --blue-soft: var(--paper-muted);
+  --max-width: var(--container);
+  --radius: var(--radius-sm);
+  --shadow: var(--shadow-card);
+}
+
+html[data-theme="dark"] {
+  --paper: #121212;
+  --paper-muted: #1d1d1d;
+  --text: #f6f3ee;
+  --muted: #bcb6ae;
+  --line: #383838;
+  --navy-800: #d8d3cc;
+  color-scheme: dark;
 }
