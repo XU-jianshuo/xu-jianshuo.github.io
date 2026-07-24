@@ -19,6 +19,11 @@ const pairs = [
 ];
 
 const pages = pairs.flat();
+const chineseOnlyPages = [
+  "insights/non-auto-product-system/index.html",
+  "insights/h2-non-auto-six-actions/index.html",
+];
+const allPublicPages = [...pages, ...chineseOnlyPages, "404.html"];
 
 test("all planned pages and publishing files exist", () => {
   for (const file of [
@@ -34,7 +39,7 @@ test("all planned pages and publishing files exist", () => {
 });
 
 test("pages are semantic, titled and linked to shared styles", async () => {
-  for (const file of [...pages, "404.html"]) {
+  for (const file of allPublicPages) {
     const html = await readFile(file, "utf8");
     assert.match(html, /<!doctype html>/i, `${file}: doctype`);
     assert.match(html, /<html[^>]+lang="[^"]+"/i, `${file}: language`);
@@ -63,7 +68,7 @@ test("home pages expose the expertise anchor", async () => {
 });
 
 test("public HTML does not disclose restricted data", async () => {
-  for (const file of [...pages, "404.html"]) {
+  for (const file of allPublicPages) {
     const html = await readFile(file, "utf8");
     assert.doesNotMatch(html, /18926485677/, `${file}: full phone leaked`);
     assert.doesNotMatch(html, /1989\s*年?\s*10\s*月?/i, `${file}: birth date leaked`);
@@ -72,7 +77,7 @@ test("public HTML does not disclose restricted data", async () => {
 });
 
 test("root-relative internal links resolve", async () => {
-  for (const file of pages) {
+  for (const file of [...pages, ...chineseOnlyPages]) {
     const html = await readFile(file, "utf8");
     const hrefs = [...html.matchAll(/href="(\/[^"]*)"/gi)].map((match) => match[1]);
     for (const href of hrefs) {
@@ -82,6 +87,59 @@ test("root-relative internal links resolve", async () => {
       assert.equal(existsSync(path.normalize(target)), true, `${file}: broken link ${href}`);
     }
   }
+});
+
+test("non-auto report covers the ten professional scenarios", async () => {
+  const html = await readFile("insights/non-auto-product-system/index.html", "utf8");
+  const scenarios = [
+    "车主延伸与随车经营",
+    "两轮出行",
+    "健康与员工福利",
+    "校园少儿",
+    "旅游出行与航空平台",
+    "文娱赛事与高风险运动",
+    "居家、物业与租住",
+    "金融银行战略渠道",
+    "政务综治与区域民生",
+    "消费权益与数码设备",
+  ];
+  for (const scenario of scenarios) assert.match(html, new RegExp(scenario), scenario);
+  for (const dimension of ["入口", "产品", "新保", "续保", "风控"]) {
+    assert.match(html, new RegExp(dimension), `missing dimension: ${dimension}`);
+  }
+});
+
+test("H2 report exposes schedule, actions, metrics and expected effects", async () => {
+  const html = await readFile("insights/h2-non-auto-six-actions/index.html", "utf8");
+  for (const content of [
+    "2026 年 7—12 月",
+    "4.6",
+    "34%",
+    "50%",
+    "3 件",
+    "5 件",
+    "20%",
+    "40%",
+    "预期效果",
+  ]) {
+    assert.match(html, new RegExp(content.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), content);
+  }
+  assert.equal((html.match(/class="action-card/g) || []).length, 6);
+});
+
+test("reports expose progressive enhancement hooks", async () => {
+  for (const file of chineseOnlyPages) {
+    const html = await readFile(file, "utf8");
+    assert.match(html, /data-report-nav/);
+    assert.match(html, /data-reading-progress/);
+    assert.match(html, /assets\/js\/report\.js/);
+  }
+});
+
+test("sitemap includes the new Chinese reports", async () => {
+  const sitemap = await readFile("sitemap.xml", "utf8");
+  assert.match(sitemap, /insights\/non-auto-product-system\//);
+  assert.match(sitemap, /insights\/h2-non-auto-six-actions\//);
 });
 
 test("crawler metadata targets the public site", async () => {
@@ -94,4 +152,3 @@ test("crawler metadata targets the public site", async () => {
   assert.match(sitemap, /hreflang="zh-CN"/);
   assert.match(sitemap, /hreflang="en"/);
 });
-
