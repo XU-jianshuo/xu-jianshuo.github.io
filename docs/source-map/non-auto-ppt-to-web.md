@@ -21,6 +21,22 @@
 - PPT 中的风险提示使用独立红线区域，不与一般经营建议混排。
 - PPT 中的时间和目标转成推进路线与指标看板，避免只用段落描述。
 
-## 网络图片来源
+## PPT 视觉资产清单
 
-图片将在选定后记录来源页、作者、许可说明和本地文件名。运行时不使用外链图片。
+- 两份源文件共拆出 912 个媒体元素，其中 PNG 755 个、SVG 156 个、JPEG 1 个。
+- 网页保留第 12 页的四个矢量图标，用于数据看板、经营动作、流程和组织协同模块。
+- 业务地图、六步闭环、产品经营卡和月度路线图使用网页原生 HTML/CSS 重建，避免整页截图在手机端缩小失真。
+- 网站使用的 PPT 图标文件：`data-dashboard.svg`、`operations.svg`、`process.svg`、`organization.svg`。
+
+## 临时网络图片来源
+
+所有图片已下载至 `assets/images/editorial/`，网站运行时不请求外链。人物照片为可替换占位图，用户提供本人照片后沿用同一裁切容器。
+
+| Local file | Source | Use | License note |
+| --- | --- | --- | --- |
+| `portrait-placeholder.jpg` | Unsplash photo `d2ZCk_nAkZI`, TRAN NHU TUAN | 首页职业肖像占位 | Unsplash License |
+| `scenario-auto.jpg` | Unsplash image `photo-1503376780353-7e6692767b70` | 车主与随车经营 | Unsplash License |
+| `scenario-health.jpg` | Unsplash image `photo-1538108149393-fbbd81895907` | 健康与服务场景 | Unsplash License |
+| `scenario-school.jpg` | Unsplash image `photo-1509062522246-3755977927d7` | 校园少儿场景 | Unsplash License |
+| `scenario-travel.jpg` | Unsplash image `photo-1436491865332-7a61a109cc05` | 旅游与航空场景 | Unsplash License |
+| `scenario-business.jpg` | Unsplash image `photo-1486406146926-c627a92ad1ab` | 金融、政务与企业场景 | Unsplash License |
