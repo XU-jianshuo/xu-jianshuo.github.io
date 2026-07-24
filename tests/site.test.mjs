@@ -124,7 +124,7 @@ test("H2 report exposes schedule, actions, metrics and expected effects", async 
   ]) {
     assert.match(html, new RegExp(content.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), content);
   }
-  assert.equal((html.match(/class="action-card/g) || []).length, 6);
+  assert.equal((html.match(/class="action-card"/g) || []).length, 6);
 });
 
 test("reports expose progressive enhancement hooks", async () => {
