@@ -377,18 +377,11 @@
   width: min(31vw, 390px);
   margin: 0;
   aspect-ratio: 4 / 5;
-}
-
-.hero-portrait__disc {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  z-index: -1;
-  width: 92%;
-  aspect-ratio: 1;
-  background: var(--accent);
-  border-radius: 50%;
-  transform: translateX(-50%);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgb(23 23 23 / 6%);
+  border-radius: 48% 48% 43% 43%;
+  box-shadow: 0 22px 70px rgb(24 20 16 / 8%);
 }
 
 .hero-portrait img {
@@ -396,9 +389,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 20%;
-  border-radius: 0 0 44% 44%;
   filter: saturate(0.65) contrast(1.04);
-  mix-blend-mode: multiply;
 }
 
 html[data-theme="dark"] .hero-portrait img { mix-blend-mode: normal; }
@@ -571,7 +562,7 @@ html[data-theme="dark"] .credential-stat { background: rgb(29 29 29 / 82%); }
 @media (max-width: 720px) {
   .pill-nav { width: min(calc(100% - 1rem), 1080px); padding-left: 1rem; gap: 0.5rem; }
   .theme-toggle { margin-left: auto; }
-  .hero-portrait { width: min(86vw, 430px); }
+  .hero-portrait { width: min(72vw, 300px); }
   .credential-stat { padding: 0; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
   .credential-list li,
   .credential-strip li { max-width: 100%; }
