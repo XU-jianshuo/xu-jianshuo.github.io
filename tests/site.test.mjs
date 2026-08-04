@@ -73,15 +73,27 @@ test("homepage career timeline keeps roles as separate appointments", async () =
     "个非推动处高级经理",
     "续保管理室高级经理",
     "运营管理室高级经理",
-    "个人非车险部财意产品室",
+    "财意产品室室经理 / 精算经理",
     "业绩发展室室经理",
-    "战略企划部企划岗",
+    "保险企划室企划岗",
     "精算部精算岗",
   ]) {
     assert.match(zh, new RegExp(role), `index.html: missing role ${role}`);
   }
+  for (const orgField of [
+    "公司：大家财产保险有限责任公司",
+    "部门：车险部",
+    "科室：续保管理室",
+    "公司：中国平安保险（集团）股份有限公司",
+    "部门：战略企划部",
+    "科室：保险企划室",
+    "岗位：企划岗",
+  ]) {
+    assert.match(zh, new RegExp(orgField), `index.html: missing organization field ${orgField}`);
+  }
   assert.doesNotMatch(zh, /运营管理室\s*\/\s*续保管理室|运营管理\s*\/\s*续保管理/);
   assert.doesNotMatch(zh, /精算、企划与车商渠道/);
+  assert.doesNotMatch(zh, /战略企划部企划岗|战略企划部\s*·\s*企划岗/);
 
   const en = await readFile("en/index.html", "utf8");
   for (const role of [

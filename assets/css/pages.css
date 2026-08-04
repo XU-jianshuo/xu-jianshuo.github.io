@@ -162,13 +162,27 @@
 
 .career-timeline { position: relative; max-width: 990px; padding: 0; margin: 0 auto; list-style: none; }
 .career-timeline::before { position: absolute; top: 1rem; bottom: 1rem; left: 50%; width: 1px; background: var(--line); content: ""; }
-.career-timeline li { position: relative; width: 50%; padding: 0 3rem 3.5rem 0; }
-.career-timeline li:nth-child(even) { margin-left: 50%; padding: 0 0 3.5rem 3rem; }
+.career-timeline li { position: relative; width: 50%; padding: 1.25rem 3rem 1.4rem 1.25rem; background: var(--paper-muted); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
+.career-timeline li + li { margin-top: 1.25rem; }
+.career-timeline li:nth-child(even) { margin-left: 50%; padding: 1.25rem 1.25rem 1.4rem 3rem; }
 .career-timeline li::after { position: absolute; top: 0.35rem; right: -0.45rem; width: 0.9rem; height: 0.9rem; background: var(--accent); border: 5px solid var(--paper-muted); border-radius: 50%; content: ""; box-shadow: 0 0 0 1px var(--line); }
 .career-timeline li:nth-child(even)::after { right: auto; left: -0.45rem; }
 .career-timeline time { color: var(--accent-strong); font-size: 0.82rem; font-weight: 900; }
 .career-timeline h3 { margin: 0.5rem 0; }
 .career-timeline p { color: var(--muted); }
+.career-fields {
+  margin: 0.75rem 0 0.95rem;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.8;
+}
+.role-block .career-fields {
+  padding: 0.7rem 0.85rem;
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
 
 .work-grid { display: grid; gap: 1.25rem; }
 .work-feature { display: grid; min-height: 480px; overflow: hidden; grid-template-columns: 0.95fr 1.05fr; background: var(--paper-muted); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
@@ -247,11 +261,12 @@
   .credential-band { width: min(calc(100% - 1rem), 430px); padding-bottom: 2.5rem; margin-top: 0; }
   .credential-strip { padding: 0.75rem 1rem 0; }
   .credential-strip li { width: min(100%, 22rem); justify-content: center; text-align: center; }
-  .career-timeline::before { left: 0.45rem; }
+  .career-timeline::before { display: none; }
   .career-timeline li,
-  .career-timeline li:nth-child(even) { width: 100%; padding: 0 0 2.5rem 2.4rem; margin: 0; }
+  .career-timeline li:nth-child(even) { width: 100%; padding: 1.15rem; margin: 0; }
+  .career-timeline li + li { margin-top: 0.9rem; }
   .career-timeline li::after,
-  .career-timeline li:nth-child(even)::after { right: auto; left: 0; }
+  .career-timeline li:nth-child(even)::after { display: none; }
   .work-feature { border-radius: var(--radius-md); }
   .work-feature__facts,
   .judgment-grid,
