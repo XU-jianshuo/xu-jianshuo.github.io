@@ -170,19 +170,6 @@
 .career-timeline time { color: var(--accent-strong); font-size: 0.82rem; font-weight: 900; }
 .career-timeline h3 { margin: 0.5rem 0; }
 .career-timeline p { color: var(--muted); }
-.career-fields {
-  margin: 0.75rem 0 0.95rem;
-  color: var(--text);
-  font-size: 0.82rem;
-  font-weight: 650;
-  line-height: 1.8;
-}
-.role-block .career-fields {
-  padding: 0.7rem 0.85rem;
-  background: var(--surface-3);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-}
 
 .work-grid { display: grid; gap: 1.25rem; }
 .work-feature { display: grid; min-height: 480px; overflow: hidden; grid-template-columns: 0.95fr 1.05fr; background: var(--paper-muted); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
