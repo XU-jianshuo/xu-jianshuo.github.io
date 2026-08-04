@@ -69,21 +69,22 @@ test("home pages expose the expertise anchor", async () => {
 
 test("homepage career timeline keeps roles as separate appointments", async () => {
   const zh = await readFile("index.html", "utf8");
+  const zhText = zh.replace(/<[^>]+>/g, "");
   for (const role of [
     "大家财产保险有限责任公司 · 车险部 · 个非推动处 · 高级经理",
     "大家财产保险有限责任公司 · 车险部 · 续保管理室 · 高级经理",
     "大家财产保险有限责任公司 · 车险部 · 运营管理室 · 高级经理",
-    "中国平安财产保险股份有限公司 · 个人非车险部 · 财意产品室 · 室经理 / 精算经理",
-    "中国平安财产保险股份有限公司 · 车商渠道 · 业绩发展室 · 室经理",
+    "中国平安财产保险股份有限公司 · 个人非车险部 · 财意产品室 · 经理 / 精算经理",
+    "中国平安财产保险股份有限公司 · 车代管理部 · 业绩发展室 · 经理",
     "中国平安保险（集团）股份有限公司 · 战略企划部 · 保险企划室 · 企划岗",
     "中国平安财产保险股份有限公司 · 精算部 · 评估室 · 精算岗",
   ]) {
-    assert.match(zh, new RegExp(role), `index.html: missing role ${role}`);
+    assert.match(zhText, new RegExp(role), `index.html: missing role ${role}`);
   }
-  assert.doesNotMatch(zh, /公司：|部门：|科室：|岗位：|career-fields/);
-  assert.doesNotMatch(zh, /运营管理室\s*\/\s*续保管理室|运营管理\s*\/\s*续保管理/);
-  assert.doesNotMatch(zh, /精算、企划与车商渠道/);
-  assert.doesNotMatch(zh, /战略企划部企划岗|战略企划部\s*·\s*企划岗/);
+  assert.doesNotMatch(zhText, /公司：|部门：|科室：|岗位：|career-fields/);
+  assert.doesNotMatch(zhText, /运营管理室\s*\/\s*续保管理室|运营管理\s*\/\s*续保管理/);
+  assert.doesNotMatch(zhText, /精算、企划与车商渠道|车商渠道|室经理/);
+  assert.doesNotMatch(zhText, /战略企划部企划岗|战略企划部\s*·\s*企划岗/);
 
   const en = await readFile("en/index.html", "utf8");
   for (const role of [

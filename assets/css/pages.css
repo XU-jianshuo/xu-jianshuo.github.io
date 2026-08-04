@@ -169,6 +169,7 @@
 .career-timeline li:nth-child(even)::after { right: auto; left: -0.45rem; }
 .career-timeline time { color: var(--accent-strong); font-size: 0.82rem; font-weight: 900; }
 .career-timeline h3 { margin: 0.5rem 0; }
+.career-company { white-space: nowrap; }
 .career-timeline p { color: var(--muted); }
 
 .work-grid { display: grid; gap: 1.25rem; }
