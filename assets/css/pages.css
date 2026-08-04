@@ -169,6 +169,28 @@
 .career-timeline time { color: var(--accent-strong); font-size: 0.82rem; font-weight: 900; }
 .career-timeline h3 { margin: 0.5rem 0; }
 .career-timeline p { color: var(--muted); }
+.career-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 0.75rem;
+  padding: 0;
+  margin: 0.85rem 0 1rem;
+}
+.career-meta div {
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--line);
+}
+.career-meta dt {
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+.career-meta dd {
+  margin: 0.16rem 0 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
 
 .work-grid { display: grid; gap: 1.25rem; }
 .work-feature { display: grid; min-height: 480px; overflow: hidden; grid-template-columns: 0.95fr 1.05fr; background: var(--paper-muted); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
