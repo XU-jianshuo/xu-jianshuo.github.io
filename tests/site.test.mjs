@@ -67,6 +67,36 @@ test("home pages expose the expertise anchor", async () => {
   }
 });
 
+test("homepage career timeline keeps roles as separate appointments", async () => {
+  const zh = await readFile("index.html", "utf8");
+  for (const role of [
+    "个非推动处高级经理",
+    "续保管理室高级经理",
+    "运营管理室高级经理",
+    "个人非车险部财意产品室",
+    "业绩发展室室经理",
+    "战略企划部企划岗",
+    "精算部精算岗",
+  ]) {
+    assert.match(zh, new RegExp(role), `index.html: missing role ${role}`);
+  }
+  assert.doesNotMatch(zh, /运营管理室\s*\/\s*续保管理室|运营管理\s*\/\s*续保管理/);
+  assert.doesNotMatch(zh, /精算、企划与车商渠道/);
+
+  const en = await readFile("en/index.html", "utf8");
+  for (const role of [
+    "Non-auto Promotion Office",
+    "Renewal Management Office",
+    "Operations Management Office",
+    "Personal Non-auto Product Office",
+    "Performance Development Office",
+    "Strategic Planning Department",
+    "Actuarial Department",
+  ]) {
+    assert.match(en, new RegExp(role), `en/index.html: missing role ${role}`);
+  }
+});
+
 test("public HTML does not disclose restricted data", async () => {
   for (const file of allPublicPages) {
     const html = await readFile(file, "utf8");
