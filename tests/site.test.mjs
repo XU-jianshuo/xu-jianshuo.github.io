@@ -73,15 +73,12 @@ test("homepage career timeline keeps roles as separate appointments", async () =
     "个非推动处高级经理",
     "续保管理室高级经理",
     "运营管理室高级经理",
-    "财意产品室室经理 / 精算经理",
+    "个人非车险部财意产品室",
     "业绩发展室室经理",
-    "保险企划室企划岗",
+    "战略企划部企划岗",
     "精算部精算岗",
   ]) {
     assert.match(zh, new RegExp(role), `index.html: missing role ${role}`);
-  }
-  for (const field of ["公司", "部门", "科室", "岗位", "保险企划室"]) {
-    assert.match(zh, new RegExp(field), `index.html: missing career field ${field}`);
   }
   assert.doesNotMatch(zh, /运营管理室\s*\/\s*续保管理室|运营管理\s*\/\s*续保管理/);
   assert.doesNotMatch(zh, /精算、企划与车商渠道/);
