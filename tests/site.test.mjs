@@ -73,6 +73,11 @@ test("public HTML does not disclose restricted data", async () => {
     assert.doesNotMatch(html, /18926485677/, `${file}: full phone leaked`);
     assert.doesNotMatch(html, /1989\s*年?\s*10\s*月?/i, `${file}: birth date leaked`);
     assert.doesNotMatch(html, /保单成本\s*90%/i, `${file}: ambiguous metric used`);
+    assert.doesNotMatch(html, /4\.6\s*亿|4\.6\s*亿元/, `${file}: internal premium target leaked`);
+    assert.doesNotMatch(html, /34%\s*提升到\s*50%|34%→50%/, `${file}: internal opening-rate target leaked`);
+    assert.doesNotMatch(html, /3\s*件\s*提升到\s*5\s*件|人均\s*3→5\s*件/, `${file}: internal productivity target leaked`);
+    assert.doesNotMatch(html, /20%\s*提升到\s*40%|20%→40%/, `${file}: internal renewal target leaked`);
+    assert.doesNotMatch(html, /市场个非车产品体系介绍|黑产客群/, `${file}: internal source or sensitive wording leaked`);
   }
 });
 
@@ -109,22 +114,21 @@ test("non-auto report covers the ten professional scenarios", async () => {
   }
 });
 
-test("H2 report exposes schedule, actions, metrics and expected effects", async () => {
+test("H2 report is public-method focused", async () => {
   const html = await readFile("insights/h2-non-auto-six-actions/index.html", "utf8");
   for (const content of [
-    "2026 年 7—12 月",
-    "4.6",
-    "34%",
-    "50%",
-    "3 件",
-    "5 件",
-    "20%",
-    "40%",
-    "预期效果",
+    "个非车业务增长的",
+    "六个观察维度",
+    "入口",
+    "产品",
+    "系统",
+    "过程指标",
+    "续保",
+    "风险边界",
   ]) {
     assert.match(html, new RegExp(content.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), content);
   }
-  assert.equal((html.match(/class="action-card"/g) || []).length, 6);
+  assert.equal((html.match(/class="report-section"/g) || []).length, 6);
 });
 
 test("reports expose progressive enhancement hooks", async () => {
