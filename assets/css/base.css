@@ -24,7 +24,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: radial-gradient(circle at 82% 12%, rgb(255 90 54 / 10%), transparent 25rem);
+  background-image: radial-gradient(circle at 82% 12%, rgb(30 58 95 / 7%), transparent 25rem);
   content: "";
   pointer-events: none;
 }
