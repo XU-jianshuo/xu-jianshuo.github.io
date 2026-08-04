@@ -115,7 +115,7 @@
 .portfolio-hero__stage .credential-stat:last-child { text-align: right; justify-self: end; }
 .portfolio-hero__actions { display: flex; justify-content: center; gap: 0.75rem; margin-top: -1rem; position: relative; z-index: 4; }
 .credential-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem; padding: 1.25rem 1rem 0; margin: 0; list-style: none; }
-.credential-strip li { padding: 0.45rem 0.75rem; background: var(--paper-muted); border-radius: 999px; font-size: 0.78rem; font-weight: 800; }
+.credential-strip li { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.75rem; background: var(--paper-muted); border-radius: 999px; font-size: 0.78rem; font-weight: 800; }
 
 .editorial-section { padding: clamp(4.5rem, 9vw, 8.5rem) 0; }
 .editorial-section--muted { background: var(--paper-muted); }
@@ -189,10 +189,13 @@
 
 @media (max-width: 720px) {
   .portfolio-hero { padding-top: 2rem; }
+  .portfolio-hero__role { max-width: min(100%, 22rem); margin-inline: auto; padding-inline: 1rem; }
   .portfolio-hero__stage { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .portfolio-hero__stage .credential-stat:last-child { justify-self: center; text-align: center; }
   .portfolio-hero__stage .credential-stat:first-child { order: 2; }
   .portfolio-hero__actions { margin-top: 1rem; flex-direction: column; padding-inline: 1rem; }
+  .credential-strip { padding-inline: 1rem; }
+  .credential-strip li { width: min(100%, 22rem); justify-content: center; text-align: center; }
   .career-timeline::before { left: 0.45rem; }
   .career-timeline li,
   .career-timeline li:nth-child(even) { width: 100%; padding: 0 0 2.5rem 2.4rem; margin: 0; }
