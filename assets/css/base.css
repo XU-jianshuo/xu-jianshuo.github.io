@@ -21,12 +21,7 @@ body {
 }
 
 body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(circle at 82% 12%, rgb(30 58 95 / 7%), transparent 25rem);
-  content: "";
-  pointer-events: none;
+  display: none;
 }
 
 h1,
@@ -43,7 +38,7 @@ h1,
 h2,
 h3 {
   font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 650;
   line-height: 1.12;
   text-wrap: balance;
 }
@@ -57,7 +52,7 @@ a {
   text-underline-offset: 0.2em;
 }
 
-a:hover { color: var(--gold); }
+a:hover { color: var(--accent-strong); }
 
 img,
 svg {
@@ -74,7 +69,7 @@ select {
 }
 
 :focus-visible {
-  outline: 3px solid var(--gold);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 
@@ -106,14 +101,14 @@ select {
   margin-bottom: 1rem;
   color: var(--accent);
   font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .section-kicker::before {
   width: 1.8rem;
-  height: 2px;
+  height: 1px;
   background: currentColor;
   content: "";
 }
@@ -136,10 +131,10 @@ select {
 
 .eyebrow {
   margin-bottom: var(--space-2);
-  color: var(--gold);
+  color: var(--accent);
   font-size: 0.76rem;
-  font-weight: 750;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
