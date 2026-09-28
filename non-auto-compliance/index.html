@@ -104,5 +104,31 @@ let printState=[];window.addEventListener('beforeprint',()=>{printState=[...docu
 window.addEventListener('hashchange',()=>{let id=location.hash.slice(1);if(docs.some(d=>d.id===id))openDoc(id,false)});
 render();if(location.hash)openDoc(location.hash.slice(1),false);
 </script>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
+import { getFirestore, doc, getDocs, collection, onSnapshot, setDoc, updateDoc, increment, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
+
+const firebaseConfig={apiKey:'AIzaSyAoA-H3zIHCgMhorNLG13jIpnfmukvO4CM',authDomain:'non-auto-compliance.firebaseapp.com',projectId:'non-auto-compliance',storageBucket:'non-auto-compliance.firebasestorage.app',messagingSenderId:'468203672610',appId:'1:468203672610:web:bf270be1ea87ac830ea67b'};
+const stats=document.getElementById('stats');
+stats.insertAdjacentHTML('afterbegin','<div class="stat stat-live"><strong id="onlineVisitors">—</strong><span>当前在线</span></div><div class="stat stat-live"><strong id="todayViews">—</strong><span>今日浏览</span></div><div class="stat stat-live"><strong id="totalViews">—</strong><span>累计浏览</span></div>');
+const style=document.createElement('style');
+style.textContent='.stats{grid-template-columns:repeat(7,minmax(0,1fr))}.stat{padding-right:16px;gap:10px;min-width:0}.stat+.stat{padding-left:16px}.stat-live strong{color:var(--green)}@media(max-width:1150px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:760px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}';
+document.head.append(style);
+const statText=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=Number(value||0).toLocaleString('zh-CN')};
+const dateKey=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date());
+try{
+  const db=getFirestore(initializeApp(firebaseConfig));
+  const totalRef=doc(db,'siteStats','summary'),dailyRef=doc(db,'dailyStats',dateKey());
+  const key='nonAutoComplianceVisitorId',sessionId=sessionStorage.getItem(key)||(crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(36).slice(2)}`),sessionRef=doc(db,'activeVisitors',sessionId);
+  sessionStorage.setItem(key,sessionId);
+  const refreshOnline=async()=>{const cutoff=Date.now()-300000;const active=await getDocs(collection(db,'activeVisitors'));statText('onlineVisitors',active.docs.filter(s=>s.data().lastSeen&&s.data().lastSeen.toMillis()>cutoff).length)};
+  const pulse=()=>setDoc(sessionRef,{lastSeen:serverTimestamp()},{merge:true}).catch(()=>{});
+  onSnapshot(totalRef,s=>statText('totalViews',s.exists()?s.data().totalViews:0),()=>statText('totalViews',0));
+  onSnapshot(dailyRef,s=>statText('todayViews',s.exists()?s.data().views:0),()=>statText('todayViews',0));
+  Promise.all([updateDoc(totalRef,{totalViews:increment(1),updatedAt:serverTimestamp()}),setDoc(dailyRef,{views:increment(1),updatedAt:serverTimestamp()},{merge:true})]).catch(()=>{});
+  pulse();refreshOnline().catch(()=>statText('onlineVisitors',0));setTimeout(()=>refreshOnline().catch(()=>{}),1200);
+  setInterval(pulse,60000);setInterval(()=>refreshOnline().catch(()=>{}),60000);
+}catch(error){console.warn('访问统计暂不可用',error);['onlineVisitors','todayViews','totalViews'].forEach(id=>statText(id,0));}
+</script>
 </body>
 </html>
