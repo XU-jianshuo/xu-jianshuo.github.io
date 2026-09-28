@@ -126,7 +126,7 @@ try{
   onSnapshot(totalRef,s=>statText('totalViews',s.exists()?s.data().totalViews:0),()=>statText('totalViews',0));
   onSnapshot(dailyRef,s=>statText('todayViews',s.exists()?s.data().views:0),()=>statText('todayViews',0));
   Promise.all([updateDoc(totalRef,{totalViews:increment(1),updatedAt:serverTimestamp()}),setDoc(dailyRef,{views:increment(1),updatedAt:serverTimestamp()},{merge:true})]).catch(()=>{});
-  pulse();refreshOnline().catch(()=>statText('onlineVisitors',0));setTimeout(()=>refreshOnline().catch(()=>{}),1200);
+  pulse();statText('onlineVisitors',1);refreshOnline().catch(()=>{});setTimeout(()=>refreshOnline().catch(()=>{}),1200);
   setInterval(pulse,60000);setInterval(()=>refreshOnline().catch(()=>{}),60000);
 }catch(error){console.warn('访问统计暂不可用',error);['onlineVisitors','todayViews','totalViews'].forEach(id=>statText(id,0));}
 </script>
