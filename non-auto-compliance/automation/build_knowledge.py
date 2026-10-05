@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 import re
-from datetime import date
+from datetime import date as today_date
 
 ROOT = Path(__file__).resolve().parent
 DOCS = []
@@ -31,7 +31,7 @@ def add(id, title, cat, number, date, effective, products, rules, reading, actio
     if effective_match and status in ('待施行', '即将施行'):
         try:
             effective_day = date.fromisoformat(effective_match.group(0))
-            if date.today() >= effective_day:
+            if today_date.today() >= effective_day:
                 status = '执行中'
         except ValueError:
             pass
