@@ -1,0 +1,818 @@
+{
+  "seenDocIds": [
+    "1000876",
+    "1003640",
+    "1008024",
+    "1008119",
+    "1011374",
+    "1014775",
+    "1016457",
+    "1021134",
+    "1021840",
+    "1023461",
+    "1024321",
+    "1024945",
+    "1024949",
+    "1024955",
+    "1025446",
+    "1025450",
+    "1025485",
+    "1025609",
+    "1025613",
+    "1025629",
+    "1025639",
+    "1026165",
+    "1026263",
+    "1026862",
+    "1026894",
+    "1027050",
+    "1027254",
+    "1031903",
+    "1033153",
+    "1033935",
+    "1034763",
+    "1039036",
+    "1042918",
+    "1045640",
+    "1046200",
+    "1046525",
+    "1046532",
+    "1047260",
+    "1047495",
+    "1047624",
+    "1051199",
+    "1053395",
+    "1054663",
+    "1054764",
+    "1059215",
+    "1060981",
+    "1062883",
+    "1065347",
+    "1069146",
+    "1074419",
+    "1075590",
+    "1077306",
+    "1080924",
+    "1081986",
+    "1082286",
+    "1083316",
+    "1087524",
+    "1087689",
+    "1089714",
+    "1093486",
+    "1095372",
+    "1096677",
+    "1117684",
+    "1124494",
+    "1124968",
+    "1127959",
+    "1129945",
+    "1132125",
+    "1134197",
+    "1144382",
+    "1147325",
+    "1151060",
+    "1151064",
+    "1151066",
+    "1152569",
+    "1152893",
+    "1155386",
+    "1156629",
+    "1157222",
+    "1158494",
+    "1161211",
+    "1162431",
+    "1173027",
+    "1175200",
+    "1176146",
+    "1178105",
+    "1179153",
+    "1179186",
+    "1179609",
+    "1180099",
+    "1180100",
+    "1183334",
+    "1186281",
+    "1189352",
+    "1191077",
+    "1191125",
+    "1191182",
+    "1192041",
+    "1192220",
+    "1192311",
+    "1193890",
+    "1195497",
+    "1195616",
+    "1196728",
+    "1196832",
+    "1198119",
+    "1198310",
+    "1199297",
+    "1199538",
+    "1199748",
+    "1199877",
+    "1200292",
+    "1202140",
+    "1202219",
+    "1202946",
+    "1203108",
+    "1203324",
+    "1203446",
+    "1203545",
+    "1203570",
+    "1203574",
+    "1203601",
+    "1203998",
+    "1204426",
+    "1204441",
+    "1204457",
+    "1204810",
+    "1205226",
+    "1205253",
+    "1206145",
+    "1206222",
+    "1207142",
+    "1207241",
+    "1208198",
+    "1208683",
+    "1209374",
+    "1209888",
+    "1214328",
+    "1214382",
+    "1214386",
+    "1217183",
+    "1222555",
+    "1223133",
+    "1224677",
+    "1225502",
+    "1225642",
+    "1228166",
+    "1228568",
+    "1230963",
+    "1231212",
+    "1231235",
+    "1231388",
+    "1232278",
+    "1236057",
+    "1236186",
+    "1236230",
+    "1237183",
+    "1239473",
+    "1239741",
+    "1240325",
+    "1240794",
+    "1242774",
+    "1243763",
+    "1243771",
+    "1243776",
+    "1243816",
+    "1243819",
+    "1243920",
+    "1244924",
+    "1247569",
+    "1248393",
+    "1248422",
+    "1249407",
+    "1250501",
+    "1250525",
+    "1251479",
+    "1251642",
+    "1251738",
+    "1253070",
+    "1255778",
+    "1261538",
+    "1261784",
+    "1263701",
+    "1264238",
+    "1266349",
+    "1268906",
+    "1268910",
+    "1268949",
+    "1268952",
+    "1269522",
+    "1269745",
+    "1270028",
+    "1270029",
+    "1270033",
+    "1270034",
+    "1272327",
+    "1273106",
+    "1273701",
+    "1273761",
+    "1273763",
+    "1274236",
+    "149161",
+    "178636",
+    "180252",
+    "227405",
+    "263324",
+    "263491",
+    "263843",
+    "265032",
+    "265212",
+    "265392",
+    "265592",
+    "267216",
+    "268592",
+    "268949",
+    "269908",
+    "270552",
+    "270800",
+    "271515",
+    "272101",
+    "273047",
+    "274180",
+    "274908",
+    "275097",
+    "275384",
+    "275604",
+    "276276",
+    "277014",
+    "278802",
+    "279040",
+    "372897",
+    "372898",
+    "862443",
+    "875861",
+    "875999",
+    "876073",
+    "876113",
+    "876115",
+    "879929",
+    "879931",
+    "879932",
+    "879933",
+    "879935",
+    "879937",
+    "879938",
+    "879939",
+    "879940",
+    "879941",
+    "879942",
+    "879943",
+    "879944",
+    "879945",
+    "879946",
+    "879947",
+    "880477",
+    "881654",
+    "886173",
+    "886826",
+    "889646",
+    "893765",
+    "898311",
+    "899357",
+    "907504",
+    "913551",
+    "915460",
+    "916525",
+    "922004",
+    "929565",
+    "929647",
+    "944462",
+    "949137",
+    "958198",
+    "962016",
+    "966972",
+    "967936",
+    "970667",
+    "971698",
+    "971868",
+    "976000",
+    "976139",
+    "979396",
+    "981958",
+    "986408",
+    "987133",
+    "991222",
+    "992898",
+    "998692",
+    "999118"
+  ],
+  "lastSuccessfulRun": "2026-10-11T11:49:27.624705+00:00",
+  "knowledgeBaseStatuses": {
+    "G01": {
+      "title": "关于印发《非车险综合治理行动方案》的通知",
+      "status": "执行中",
+      "effective": "2026年部署，目标覆盖“十五五”",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1268910&generaltype=1&itemId=4216"
+    },
+    "G02": {
+      "title": "关于加强非车险业务监管有关事项的通知",
+      "status": "执行中",
+      "effective": "2025-11-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1228568&itemId=928"
+    },
+    "G03": {
+      "title": "关于加强监管防范风险推动保险业高质量发展的若干意见",
+      "status": "政策指导",
+      "effective": "政策部署",
+      "url": "https://www.nhc.gov.cn/bgt/gwywj2/202409/ba325cee55244d6e9f88876eb5376b79.shtml"
+    },
+    "G04": {
+      "title": "强监管防风险促改革推动财险业高质量发展行动方案",
+      "status": "政策指导",
+      "effective": "政策部署",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1189352&itemId=861"
+    },
+    "P01": {
+      "title": "财产保险公司保险条款和保险费率管理办法",
+      "status": "执行中",
+      "effective": "2021-10-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=1003640"
+    },
+    "P02": {
+      "title": "关于进一步加强和改进财产保险公司产品监管有关问题的通知",
+      "status": "执行中",
+      "effective": "2020-03-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=891917&itemId=861"
+    },
+    "P04": {
+      "title": "财产保险公司产品费率厘定指引",
+      "status": "执行中",
+      "effective": "2017-02-01",
+      "url": "https://jrj.sh.gov.cn/YWTBZCCX166/20170111/0031-148705.html"
+    },
+    "P05": {
+      "title": "保险公司非寿险业务准备金管理办法",
+      "status": "执行中",
+      "effective": "2021-12-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1014775&itemId=928"
+    },
+    "P06": {
+      "title": "保险公司非寿险业务准备金管理办法实施细则（1—7号）",
+      "status": "执行中",
+      "effective": "自印发之日起施行",
+      "url": "https://jrj.sh.gov.cn/YWTBZCCX166/20220310/686e0d06affe4b0384b773ba764a05f6.html"
+    },
+    "H01": {
+      "title": "意外伤害保险业务监管办法",
+      "status": "执行中",
+      "effective": "存量产品过渡期已届满",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1012238&itemId=928"
+    },
+    "H02": {
+      "title": "健康保险管理办法",
+      "status": "执行中",
+      "effective": "2019-12-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=1027050&itemId=4214"
+    },
+    "H03": {
+      "title": "关于规范短期健康保险业务有关问题的通知",
+      "status": "执行中",
+      "effective": "存量不符产品自2021-05-01停售",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=958198&itemId=928"
+    },
+    "H04": {
+      "title": "关于规范保险公司城市定制型商业医疗保险业务的通知",
+      "status": "执行中",
+      "effective": "按通知执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=987680&itemId=861"
+    },
+    "H05": {
+      "title": "关于推动城市商业医疗险高质量发展的通知",
+      "status": "执行中",
+      "effective": "按通知执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1253070&itemId=861"
+    },
+    "H06": {
+      "title": "关于推动健康保险高质量发展的指导意见",
+      "status": "现行有效（政府法规库标记）",
+      "effective": "2025-09-28",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=103941"
+    },
+    "H07": {
+      "title": "人身保险业务基本服务规定",
+      "status": "执行中",
+      "effective": "2010-05-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=1025465&itemId=4214"
+    },
+    "H08": {
+      "title": "关于适用商业健康保险个人所得税优惠政策产品有关事项的通知",
+      "status": "边界参考",
+      "effective": "2023-08-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1115898&itemId=861"
+    },
+    "F01": {
+      "title": "责任保险业务监管办法",
+      "status": "执行中",
+      "effective": "2021-01-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=952577&itemId=861"
+    },
+    "F02": {
+      "title": "信用保险和保证保险业务监管办法",
+      "status": "执行中",
+      "effective": "自印发起实施",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=904960&itemId=928"
+    },
+    "F03": {
+      "title": "关于扩大城乡居民住宅巨灾保险保障范围进一步完善巨灾保险制度的通知",
+      "status": "执行中",
+      "effective": "按通知及产品衔接安排执行",
+      "url": "https://m.mof.gov.cn/czxw/202403/t20240326_3931572.htm"
+    },
+    "F05": {
+      "title": "旅行社责任保险管理办法",
+      "status": "执行中（旅行社责任险专项；个人旅行场景关联）",
+      "effective": "2011-02-01",
+      "url": "https://zwgk.mct.gov.cn/zfxxgkml/zcfg/bmgz/202012/t20201204_905314.html"
+    },
+    "I01": {
+      "title": "互联网保险业务监管办法",
+      "status": "执行中",
+      "effective": "2021-02-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=949137&itemId=926"
+    },
+    "I02": {
+      "title": "关于加强和改进互联网财产保险业务监管有关事项的通知",
+      "status": "执行中",
+      "effective": "按通知及过渡要求执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1173683&itemId=928"
+    },
+    "I03": {
+      "title": "关于进一步规范保险机构互联网人身保险业务有关事项的通知",
+      "status": "执行中",
+      "effective": "按通知及过渡要求执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1014129&itemId=928"
+    },
+    "I04": {
+      "title": "关于规范互联网保险销售行为可回溯管理的通知",
+      "status": "执行中",
+      "effective": "按通知执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=912732&itemId=4098"
+    },
+    "I05": {
+      "title": "金融产品网络营销管理办法",
+      "status": "待施行",
+      "effective": "2026-09-30",
+      "url": "https://www.cac.gov.cn/2026-04/24/c_1778769008779432.htm"
+    },
+    "I06": {
+      "title": "互联网广告管理办法",
+      "status": "执行中",
+      "effective": "2023-05-01",
+      "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_d93a579afd45413e8576e4623fab348f.html"
+    },
+    "S01": {
+      "title": "保险销售行为管理办法",
+      "status": "执行中",
+      "effective": "2024-03-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1129945&itemId=861"
+    },
+    "S02": {
+      "title": "金融机构产品适当性管理办法",
+      "status": "执行中",
+      "effective": "2026-02-01",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=103294"
+    },
+    "S03": {
+      "title": "保险代理人监管规定",
+      "status": "执行中",
+      "effective": "2021-01-01",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=87598"
+    },
+    "S04": {
+      "title": "关于加强保险公司中介渠道业务管理的通知",
+      "status": "执行中",
+      "effective": "按通知执行并衔接后续规则",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=210994&itemId=928"
+    },
+    "S05": {
+      "title": "商业银行代理保险业务管理办法",
+      "status": "执行中",
+      "effective": "结合2024年通知执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=234814&itemId=928"
+    },
+    "S06": {
+      "title": "关于商业银行代理保险业务有关事项的通知",
+      "status": "执行中",
+      "effective": "按通知执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1161126&itemId=861"
+    },
+    "S07": {
+      "title": "关于落实保险公司主体责任加强保险销售人员管理的通知",
+      "status": "执行中",
+      "effective": "按通知执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=904806&itemId=861"
+    },
+    "S08": {
+      "title": "保险销售行为可回溯管理暂行办法",
+      "status": "边界参考",
+      "effective": "按条文限定情形适用",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/201905/t20190522_60310.html"
+    },
+    "C01": {
+      "title": "银行保险机构消费者权益保护管理办法",
+      "status": "执行中",
+      "effective": "2023-03-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=1087524"
+    },
+    "C02": {
+      "title": "银行业保险业消费投诉处理管理办法",
+      "status": "执行中",
+      "effective": "2020-03-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=886173"
+    },
+    "C04": {
+      "title": "中华人民共和国消费者权益保护法实施条例",
+      "status": "执行中",
+      "effective": "2024-07-01",
+      "url": "https://app.www.gov.cn/govdata/gov/202403/19/513111/article.html"
+    },
+    "C05": {
+      "title": "反保险欺诈工作办法",
+      "status": "执行中",
+      "effective": "2024-08-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1172486&itemId=928"
+    },
+    "L01": {
+      "title": "中华人民共和国保险法（2015年修正）",
+      "status": "执行中",
+      "effective": "按现行修正文本适用",
+      "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_4c715a53f3d4402c89f62ae77809f638.html"
+    },
+    "L02": {
+      "title": "中华人民共和国民法典",
+      "status": "执行中",
+      "effective": "2021-01-01",
+      "url": "https://tjca.miit.gov.cn/zwgk/zcwj/flfg/art/2020/art_20cf1a2e1b854924b5caa744c8045d1f.html"
+    },
+    "L03": {
+      "title": "最高人民法院关于适用《中华人民共和国保险法》若干问题的解释（二）（2020修正）",
+      "status": "执行中",
+      "effective": "2021-01-01（修正文本）",
+      "url": "https://cicc.court.gov.cn/html/1/218/62/84/12841.html"
+    },
+    "L04": {
+      "title": "最高人民法院关于适用《中华人民共和国保险法》若干问题的解释（三）（2020修正）",
+      "status": "执行中",
+      "effective": "2021-01-01（修正文本）",
+      "url": "https://cicc.court.gov.cn/html/1/218/62/84/12841.html"
+    },
+    "L05": {
+      "title": "最高人民法院关于适用《中华人民共和国保险法》若干问题的解释（四）（2020修正）",
+      "status": "执行中",
+      "effective": "2021-01-01（修正文本）",
+      "url": "https://cicc.court.gov.cn/html/1/218/62/84/12841.html"
+    },
+    "L06": {
+      "title": "中华人民共和国反不正当竞争法（2025年修订）",
+      "status": "执行中",
+      "effective": "2025-10-15",
+      "url": "https://www.npc.gov.cn/npc/c2/c30834/202506/t20250627_446247.html"
+    },
+    "D01": {
+      "title": "中华人民共和国个人信息保护法",
+      "status": "执行中",
+      "effective": "2021-11-01",
+      "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm"
+    },
+    "D02": {
+      "title": "银行保险机构数据安全管理办法",
+      "status": "执行中",
+      "effective": "按办法执行及过渡要求落实",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1192308&itemId=926"
+    },
+    "D03": {
+      "title": "网络数据安全管理条例",
+      "status": "执行中",
+      "effective": "2025-01-01",
+      "url": "https://www.cac.gov.cn/2024-09/30/c_1729384452307680.htm"
+    },
+    "D04": {
+      "title": "金融机构合规管理办法",
+      "status": "执行中",
+      "effective": "2025-03-01；一年过渡期已届满",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1192220&itemId=924"
+    },
+    "R02": {
+      "title": "重大疾病保险的疾病定义使用规范（2020年修订版）",
+      "status": "行业规范",
+      "effective": "按规范适用范围及衔接要求执行",
+      "url": "https://www.iachina.cn/art/2020/11/5/art_8616_104704.html"
+    },
+    "R03": {
+      "title": "人身保险伤残评定及代码",
+      "status": "推荐性标准",
+      "effective": "2025-02-01",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=25940C3CEEED8A9AE06397BE0A0A525A"
+    },
+    "R04": {
+      "title": "北京监管局强监管防风险促改革推动财险业高质量发展工作方案",
+      "status": "地方参考",
+      "effective": "北京辖区政策部署",
+      "url": "https://www.nfra.gov.cn/branch/beijing/view/pages/common/ItemDetail.html?docId=1203594&itemId=1853"
+    },
+    "S09": {
+      "title": "保险经纪人监管规定",
+      "status": "执行中",
+      "effective": "2018-05-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1025629&itemId=928"
+    },
+    "L07": {
+      "title": "中华人民共和国消费者权益保护法（2013年修正）",
+      "status": "执行中",
+      "effective": "2014-03-15（本次修正）",
+      "url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_615af9ed6bcd4974bf853dd2e02bc663.html"
+    },
+    "L08": {
+      "title": "中华人民共和国广告法（2021年修正）",
+      "status": "执行中",
+      "effective": "按2021年修正文本适用",
+      "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    "D05": {
+      "title": "中华人民共和国数据安全法",
+      "status": "执行中",
+      "effective": "2021-09-01",
+      "url": "https://www.cac.gov.cn/2021-06/11/c_1624994566919140.htm"
+    },
+    "M04": {
+      "title": "关于加快推进意外险改革的意见",
+      "status": "有效（政府转载标记）；阶段目标已过",
+      "effective": "成文2020-01-17；目标节点2020/2021已过",
+      "url": "https://jrj.beijing.gov.cn/zcfg/gjzcfgn/202204/t20220412_2674735.html"
+    },
+    "M07": {
+      "title": "中国保监会 财政部关于印发《建立城乡居民住宅地震巨灾保险制度实施方案》的通知",
+      "status": "执行中（与2024年扩围通知共同适用）",
+      "effective": "按印发方案组织实施；2024年扩围事项同时适用金规〔2024〕2号",
+      "url": "https://www.xinhuanet.com/politics/2016-05/17/c_128990137.htm"
+    },
+    "M10": {
+      "title": "商务部等9部门关于促进家政服务消费扩容升级若干措施的通知",
+      "status": "政策指导（未检索到明确废止）",
+      "effective": "按通知部署落实，未单列施行日",
+      "url": "https://www.mofcom.gov.cn/zcfb/fwmy/art/2025/art_b00237fbc9194354a362511c9962b5c6.html"
+    },
+    "M11": {
+      "title": "商务部等9部门关于印发《关于促进家政服务业高质量发展的若干政策措施》的通知",
+      "status": "政策指导",
+      "effective": "按通知部署落实，未单列施行日",
+      "url": "https://www.mofcom.gov.cn/zfxxgk/gkml/art/2026/art_f2a17b9abd854680a8950b5c99e82c19.html"
+    },
+    "M12": {
+      "title": "再保险业务管理规定",
+      "status": "执行中",
+      "effective": "2021-12-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=999118"
+    },
+    "M13": {
+      "title": "保险统计管理规定",
+      "status": "执行中",
+      "effective": "2013-03-01",
+      "url": "https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/201303/t20130328_145284.html"
+    },
+    "M14": {
+      "title": "银行保险机构操作风险管理办法",
+      "status": "执行中",
+      "effective": "2024-07-01",
+      "url": "https://www.hunan.gov.cn/zqt/zcsd/202401/t20240102_32616426.html"
+    },
+    "M15": {
+      "title": "银行保险机构声誉风险管理办法（试行）",
+      "status": "执行中",
+      "effective": "2021-02-08",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=88231"
+    },
+    "M16": {
+      "title": "银行保险机构信息科技外包风险监管办法",
+      "status": "执行中",
+      "effective": "2021-12-30",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1029035&itemId=928&generaltype=0"
+    },
+    "M17": {
+      "title": "关于加强银行业保险业移动互联网应用程序管理的通知",
+      "status": "执行中",
+      "effective": "2024-09-12",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=100608"
+    },
+    "M18": {
+      "title": "保险中介机构信息化工作监管办法",
+      "status": "执行中",
+      "effective": "2021-02-01",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202101/t20210128_2237032.html"
+    },
+    "M19": {
+      "title": "保险公估人监管规定",
+      "status": "执行中",
+      "effective": "2018-05-01",
+      "url": "https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/201803/t20180307_146146.html"
+    },
+    "M20": {
+      "title": "金融机构消费者权益保护监管评价办法",
+      "status": "执行中",
+      "effective": "公布之日起",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=104080"
+    },
+    "M21": {
+      "title": "关于银行业保险业人工智能安全开发应用的指导意见",
+      "status": "执行中",
+      "effective": "按指导意见落实",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/governmentDetail.html?docId=1261784&itemId=&generaltype=1"
+    },
+    "M23": {
+      "title": "中华人民共和国反洗钱法（2024年修订）",
+      "status": "执行中",
+      "effective": "2025-01-01",
+      "url": "https://www.npc.gov.cn/npc/c2/c30834/202411/t20241108_440887.html"
+    },
+    "M24": {
+      "title": "金融机构客户尽职调查和客户身份资料及交易记录保存管理办法",
+      "status": "执行中",
+      "effective": "2026-01-01",
+      "url": "https://www.hunan.gov.cn/zqt/zcsd/202512/t20251201_33859182.html"
+    },
+    "M25": {
+      "title": "金融机构客户受益所有人识别管理办法",
+      "status": "执行中",
+      "effective": "2026-01-20",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=105384"
+    },
+    "M33": {
+      "title": "个人贷款业务明示综合融资成本规定",
+      "status": "执行中",
+      "effective": "2026-08-01",
+      "url": "https://jrjgj.gz.gov.cn/gkmlpt/content/10/10739/post_10739792.html"
+    },
+    "A01": {
+      "title": "国家金融监督管理总局关于推进普惠保险高质量发展的指导意见",
+      "status": "政策指导",
+      "effective": "2024-05-29",
+      "url": "https://app.www.gov.cn/govdata/gov/202406/07/515861/article.html"
+    },
+    "A02": {
+      "title": "中国银保监会 中国人民银行关于加强新市民金融服务工作的通知",
+      "status": "政策指导",
+      "effective": "2022-03-04",
+      "url": "https://www.safe.gov.cn/shanghai/2022/0311/1734.html"
+    },
+    "A03": {
+      "title": "促进和规范数据跨境流动规定",
+      "status": "执行中",
+      "effective": "2024-03-22",
+      "url": "https://www.cac.gov.cn/2024-03/22/c_1712776611775634.htm"
+    },
+    "A04": {
+      "title": "中华人民共和国政府采购法（2014年修正）",
+      "status": "现行有效",
+      "effective": "2003-01-01；2014-08-31修正",
+      "url": "https://www.beijing.gov.cn/gate/big5/www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/201908/t20190808_779843.html"
+    },
+    "A05": {
+      "title": "政府购买服务管理办法",
+      "status": "现行有效",
+      "effective": "2020-03-01",
+      "url": "https://m.mof.gov.cn/czxw/202001/t20200122_3463449.htm"
+    },
+    "A06": {
+      "title": "财政部关于印发中央本级政府购买服务指导性目录的通知",
+      "status": "现行有效",
+      "effective": "2020-12-22",
+      "url": "https://www.mof.gov.cn/gkml/caizhengwengao/wg2021/wg202101/202106/t20210604_3714678.htm"
+    },
+    "A07": {
+      "title": "中国保监会关于促进团体保险健康发展有关问题的通知",
+      "status": "执行中",
+      "effective": "自下发之日起施行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359810&itemId=928"
+    },
+    "A08": {
+      "title": "保险公司管理规定",
+      "status": "执行中",
+      "effective": "2009-10-01",
+      "url": "https://www.nfra.gov.cn/chinese/docfile/2025/0080c3da9e8646bcb1ab668bfb1d63e1.doc"
+    },
+    "A09": {
+      "title": "人身保险公司保险条款和保险费率管理办法",
+      "status": "执行中",
+      "effective": "2011-12-30",
+      "url": "https://www.nfra.gov.cn/chinese/docfile/2025/5d5991bbea7e4affb0e39fb88e1b64f4.doc"
+    },
+    "A10": {
+      "title": "人身保险电话销售业务管理办法",
+      "status": "执行中",
+      "effective": "2013-04-25",
+      "url": "https://www.nfra.gov.cn/chinese/docfile/2025/4130d535ba6849feae2aec779d860257.doc"
+    },
+    "A11": {
+      "title": "中国保监会关于规范人身保险公司赠送保险有关行为的通知",
+      "status": "执行中",
+      "effective": "2015-04-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359809&itemId=928"
+    },
+    "A12": {
+      "title": "中国保监会关于严格规范非保险金融产品销售的通知",
+      "status": "执行中",
+      "effective": "自发布后执行",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=365120&itemId=928"
+    },
+    "A13": {
+      "title": "中国保监会关于父母为其未成年子女投保以死亡为给付保险金条件人身保险有关问题的通知",
+      "status": "执行中",
+      "effective": "2016-01-01",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359816&itemId=928"
+    }
+  },
+  "lastRunDirectory": "output/weekly_updates/2026-10-11"
+}
