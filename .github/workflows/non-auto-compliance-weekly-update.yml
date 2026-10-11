@@ -5,6 +5,9 @@ on:
     # Every Monday at 09:00 Asia/Shanghai (01:00 UTC).
     - cron: '0 1 * * 1'
   workflow_dispatch:
+  push:
+    paths:
+      - 'non-auto-compliance/automation/.run-weekly-update'
 
 permissions:
   contents: write
