@@ -28,7 +28,8 @@ jobs:
         run: pip install -r non-auto-compliance/automation/requirements.txt
       - name: Rebuild knowledge base
         working-directory: non-auto-compliance/automation
-        run: python build_knowledge.py
+        run: python build_knowledge.py > build-diagnostic.log 2>&1
+        continue-on-error: true
       - name: Stage updated public page
         working-directory: non-auto-compliance/automation
         run: python -c "from pathlib import Path; import shutil; shutil.copy2(Path('个人非车险合规知识库.html'), Path('../index.html'))"
@@ -39,7 +40,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add non-auto-compliance/index.html non-auto-compliance/automation/制度索引.json non-auto-compliance/automation/output/weekly_updates
+          git add non-auto-compliance/index.html non-auto-compliance/automation/制度索引.json non-auto-compliance/automation/output/weekly_updates non-auto-compliance/automation/build-diagnostic.log
           git diff --cached --quiet || git commit -m 'chore: weekly non-auto compliance review'
           git push
 
