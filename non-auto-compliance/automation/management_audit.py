@@ -1,6 +1,7 @@
 """Formal-document inventory review; products are applicability tags only."""
 import json
 from pathlib import Path
+from datetime import date
 
 ROOT = Path(__file__).resolve().parent
 RESEARCH = ROOT / 'output' / 'research'
@@ -95,7 +96,7 @@ def audit(docs, meta, gaps):
                 d['products'].append('借款人意外险')
             if '个人责任险' in d['products']:
                 d['products'] += [p for p in ('宠物责任场景', '家政雇主场景') if p not in d['products']]
-    meta.update(asOf='2026-09-22', title='个人非车险 · 管理制度知识库',
+    meta.update(asOf=date.today().isoformat(), title='个人非车险 · 管理制度知识库',
                 scope='以正式管理制度为主目录，按经营治理、产品精算、专项业务、渠道销售、消保及数据内控归档；以个人非车各产品线和场景作为查漏及适用标签。',
                 limitation='公开全网检索整理。现行、待施行、历史专项、待核和参考分开标识；地方文件仅收样例，非全部省市清单。',
                 products=['意外险','借款人意外险','短期健康险','惠民保','家财险','个人责任险','旅行险','信保','组合产品','宠物责任场景','家政雇主场景'],
@@ -110,4 +111,3 @@ def audit(docs, meta, gaps):
     gaps += [dict(name='全国与地方制度覆盖边界', clue='本轮检索全国监管及政府公开文件；未逐一穷尽31省全部地市、惠民保项目和巨灾试点收文。',
                   impact='当地经营还需叠加属地有效文件及未公开监管函。', next='以实际经营地区建立地方补充台账，并核对公司正式收文及后续清理目录。')]
     (RESEARCH/'本轮制度清单.json').write_text(json.dumps(dict(additions=additions, corrections=corrections), ensure_ascii=False, indent=2), encoding='utf-8')
-
