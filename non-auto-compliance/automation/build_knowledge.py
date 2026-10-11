@@ -27,12 +27,14 @@ def add(id, title, cat, number, date, effective, products, rules, reading, actio
         issuer = '原中国银保监会' if '银保监' in number or date[:4] in ('2019','2020','2021','2022') else '国家金融监督管理总局'
     # A dated rule must never remain labelled “待施行” after its stated effective date.
     # Text without an unambiguous YYYY-MM-DD date is intentionally left for human review.
-    effective_match = re.search(r'(?<!\\d)(\\d{4})-(\\d{2})-(\\d{2})(?!\\d)', effective)
-    if effective_match and status in ('待施行', '即将施行'):
+    effective_matches = re.findall(r'(?<!\d)(\d{4}-\d{2}-\d{2})(?!\d)', effective)
+    # A repeal date may follow the original effective date; use that later date for “待废止”.
+    effective_value = effective_matches[-1] if status == '待废止' and effective_matches else (effective_matches[0] if effective_matches else None)
+    if effective_value and status in ('待施行', '即将施行', '待废止'):
         try:
-            effective_day = date.fromisoformat(effective_match.group(0))
+            effective_day = today_date.fromisoformat(effective_value)
             if today_date.today() >= effective_day:
-                status = '执行中'
+                status = '已废止' if status == '待废止' else '执行中'
         except ValueError:
             pass
     DOCS.append(dict(id=id, title=title, category=cat, number=number, date=date, effective=effective,
@@ -71,12 +73,19 @@ add('P02','关于进一步加强和改进财产保险公司产品监管有关问
     '完善产品分类监管与属地备案安排，强化个人类及高风险产品监管。｜压实公司开发审核责任，加强事中事后监管和问题产品整改。',
     '报备对象和流程需按后续条款费率办法及现行要求核对。自主注册后，公司仍承担产品管理责任。',
     '及时更新报备流程和材料清单；整改问题产品时，同时检查销售渠道和存量保单服务。',nfra('891917','861'))
-add('P03','财产保险公司保险产品开发指引','产品','保监发〔2016〕115号','2016-12-30','2017-01-01；当前版本需复核','通用',
+add('P03','财产保险公司保险产品开发指引','产品','保监发〔2016〕115号','2016-12-30','2017-01-01；2026-11-01废止','通用',
     '规范产品开发原则、条款内容、命名及开发管理，强调保险利益、风险保障与定价基础。｜防止缺乏保障实质、违反公序良俗或偏离保险本源的产品设计。',
-    '可用于检查网红场景、附加责任和特约的保险实质。2026年行动方案提出修订，使用旧指引前应核对正式版本。',
-    '保留新旧制度对应关系；审查新产品时，核对保险利益、损失补偿原则和风险是否可保。',
-    'https://jrj.sh.gov.cn/YWTBZCCX166/20170104/0031-148640.html',issuer='原保监会',source='政府官网转载',status='版本需复核',
-    boundary='本次未取得足以确认新旧替代关系的监管正式全文，不依据第三方数据库失效标签断言已废止。')
+    '本指引将在《财产保险公司保险产品开发管理规定》于2026年11月1日施行时同时废止；过渡期内应完成新旧要求映射。',
+    '建立旧指引与金规〔2026〕9号的条款、流程和职责对照表；在2026年11月1日前完成制度、产品开发流程和系统材料调整。',
+    'https://jrj.sh.gov.cn/YWTBZCCX166/20170104/0031-148640.html',issuer='原保监会',source='政府官网转载',status='待废止',
+    boundary='废止节点以金规〔2026〕9号第四十一条为准；在该规定生效前，旧指引仍须适用。')
+add('P07','财产保险公司保险产品开发管理规定','产品','金规〔2026〕9号','2026-09-30','2026-11-01','通用',
+    '明确财险公司是条款费率开发主体；个人类条款应通俗、清晰并强化消费者权益保护。｜规范主险和附加险的定义、命名、框架要素及费率开发，禁止缺乏保险利益、无实际保障内容、承诺未出险返还保费等产品。｜要求建立产品管理委员会、开发归口管理、内部条款/费率/消保审查和审批备案流程。｜对在售产品评估、年度清理注销、费率验证、年度分析报告、信息披露及责任追究作出要求。',
+    '本规定修订并更名2016年《开发指引》，是非车险综合治理下产品开发管理的基础规则。2026年11月1日前为新旧制度衔接期；短期健康险、意外险等另有规定的，仍须优先适用专项规则。',
+    '完成全部在售及拟开发产品的主附险关系、命名、条款框架、费率底稿、审议记录和报备材料盘点；将产品管理委员会审议、年度清理、评估与行业平台状态更新纳入年度计划。',
+    'https://www.nfra.gov.cn/cn/view/pages/governmentDetail.html?docId=1274236&generaltype=1&itemId=861',issuer='国家金融监督管理总局',source='监管官网',status='待施行',priority=True,
+    boundary='本规定自2026年11月1日起施行，并同时废止保监发〔2016〕115号和保监产险〔2014〕88号；机动车、农业、海上、政策性信用、短期健康及意外险另有规定的从其规定。',aliases='产品开发管理 2026年9号 金规9号 主险 附加险 产品管理委员会',
+    extra=[{'label':'总局发布说明','url':nfra('1274219','915')},{'label':'总局答记者问','url':nfra('1274220','915')}])
 add('P04','财产保险公司产品费率厘定指引','产品','保监发〔2017〕2号','2017-01-05','2017-02-01','通用',
     '规范定价数据、方法、假设和报告，要求费率具有合理依据。｜加强数据积累、测算底稿和费率回溯，根据经验偏差及时调整。',
     '仅有渠道目标价或竞品价格不能替代风险成本测算；新场景产品也要解释数据局限和假设。',
@@ -444,4 +453,3 @@ if __name__ == '__main__':
     rendered = template.replace('__DATA__',json.dumps(payload,ensure_ascii=False).replace('</','<\\/'))
     (ROOT/'个人非车险合规知识库.html').write_text(rendered,encoding='utf-8')
     print(json.dumps({'documents':len(DOCS),'categories':len(CATEGORIES),'output':str(ROOT/'个人非车险合规知识库.html')},ensure_ascii=False))
-
