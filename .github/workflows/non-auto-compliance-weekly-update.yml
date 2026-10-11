@@ -26,21 +26,20 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install -r non-auto-compliance/automation/requirements.txt
+      - name: Review official updates
+        working-directory: non-auto-compliance/automation
+        run: python weekly_regulation_update.py
       - name: Rebuild knowledge base
         working-directory: non-auto-compliance/automation
         run: python build_knowledge.py
       - name: Stage updated public page
         working-directory: non-auto-compliance/automation
         run: python stage_public_page.py
-      - name: Review official updates
-        working-directory: non-auto-compliance/automation
-        run: python weekly_regulation_update.py
       - name: Commit updated library and review record
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add non-auto-compliance/index.html non-auto-compliance/automation/制度索引.json
+          git add non-auto-compliance/index.html non-auto-compliance/automation/制度索引.json non-auto-compliance/automation/官方自动收录制度.json
           git add -f non-auto-compliance/automation/output/weekly_updates
           git diff --cached --quiet || git commit -m 'chore: weekly non-auto compliance review'
           git push
-
