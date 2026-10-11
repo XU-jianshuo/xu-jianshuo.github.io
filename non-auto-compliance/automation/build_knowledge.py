@@ -435,7 +435,30 @@ META = dict(title='个人非车险 · 合规知识库', asOf='2026-09-22', categ
     limitation='本库为公开来源整理版，不声称穷尽全国所有地方文件及公司横向制度。未公开全文、仅有摘要或转载、版本待确认事项单独标记。',
     products=['意外险','短期健康险','惠民保','家财险','个人责任险','旅行险','信保','组合产品'])
 
+def append_official_auto_records():
+    """Show new primary-source releases immediately, without fabricating legal analysis."""
+    source_path = ROOT / '官方自动收录制度.json'
+    if not source_path.exists():
+        return
+    for record in json.loads(source_path.read_text(encoding='utf-8')):
+        doc_id = str(record.get('docId') or '').strip()
+        if not doc_id or any(doc_id in str(d.get('url', '')) for d in DOCS):
+            continue
+        title = str(record.get('title') or '').strip()
+        if not title:
+            continue
+        add(f'A{doc_id}', title, '参考', str(record.get('number') or '文号以原文为准'),
+            str(record.get('publishDate') or '发布日期以原文为准'), '施行日期以正式文本为准', '通用',
+            '国家金融监督管理总局官网公开栏目新增文件，已自动纳入目录并保留官方原文入口。',
+            '该文件已从官方来源自动入库；请结合正式全文补充适用范围、效力状态、核心义务及与现有制度的替代关系。',
+            '由产品、合规或法律团队在后续工作日完成条文解读和内部制度映射。',
+            str(record.get('url') or nfra(doc_id)), issuer='国家金融监督管理总局',
+            source='监管官网自动收录', status='官方已发布', priority=True,
+            boundary='自动收录只确认公开发布来源，不替代对全文、施行日期及适用范围的专业核验。',
+            aliases=title + ' ' + str(record.get('number') or ''))
+
 if __name__ == '__main__':
+    append_official_auto_records()
     for _d in DOCS:
         _d.update(FIELD_PATCH.get(_d['id'], {}))
         _e = EXCERPT.get(_d['id'])
