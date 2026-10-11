@@ -99,10 +99,21 @@ def main() -> int:
                 record = normalise(raw, item_id)
                 if record:
                     current.setdefault(record["docId"], record)
-    except requests.RequestException as error:
-        (run_dir / "失败说明.txt").write_text(f"{now.isoformat()}\n{error}\n", encoding="utf-8")
-        print(f"NFRA retrieval failed: {error}", file=sys.stderr)
-        return 1
+    except (requests.RequestException, json.JSONDecodeError) as error:
+        # Keep the scheduled rebuild available even when the upstream site blocks
+        # a cloud runner. The failure is made explicit and no discovery baseline is
+        # advanced, so the next run will retry instead of silently losing updates.
+        explanation = f"{now.isoformat()}\n{type(error).__name__}: {error}\n"
+        (run_dir / "失败说明.txt").write_text(explanation, encoding="utf-8")
+        (run_dir / "周度更新报告.md").write_text(
+            "# 非车合规知识库｜周度更新巡检失败\n\n"
+            f"运行时间：{now.isoformat(timespec='seconds')}\n\n"
+            "国家金融监督管理总局官网列表暂时无法从本次云端运行访问；本次没有推进新增文件发现基线。"
+            "知识库页面仍已按本地明确施行日重建。下次计划运行会自动重试。\n",
+            encoding="utf-8",
+        )
+        print(f"NFRA retrieval unavailable (will retry next run): {error}", file=sys.stderr)
+        return 0
 
     state = load_state()
     seen = set(state.get("seenDocIds", []))
