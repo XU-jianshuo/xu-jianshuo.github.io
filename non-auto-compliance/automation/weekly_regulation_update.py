@@ -19,6 +19,7 @@ import requests
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "output" / "weekly_updates"
 STATE = OUTPUT / "state.json"
+AUTO_INDEX = ROOT / "官方自动收录制度.json"
 ITEMS = {
     928: "政策规章规范性文件", 927: "法律法规", 859: "政策法规",
     861: "政策文件", 4214: "监管文件", 4216: "其他政策类",
@@ -80,6 +81,22 @@ def knowledge_base_statuses() -> dict[str, dict]:
     }
 
 
+def update_auto_index(candidates: list[dict]) -> int:
+    """Persist every keyword-matched primary-source release for publication.
+
+    These entries are intentionally visible in the public library immediately.
+    The scheduled job never silently drops an official release merely because it
+    is its first successful run; editorial enrichment can follow afterwards.
+    """
+    existing = json.loads(AUTO_INDEX.read_text(encoding="utf-8")) if AUTO_INDEX.exists() else []
+    by_id = {str(item.get("docId")): item for item in existing}
+    before = len(by_id)
+    for item in candidates:
+        by_id.setdefault(str(item["docId"]), item)
+    AUTO_INDEX.write_text(json.dumps(list(by_id.values()), ensure_ascii=False, indent=2), encoding="utf-8")
+    return len(by_id) - before
+
+
 def main() -> int:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     now = datetime.now().astimezone()
@@ -120,6 +137,7 @@ def main() -> int:
     first_run = not seen
     new_records = [record for doc_id, record in current.items() if doc_id not in seen]
     candidates = [record for record in new_records if KEYWORDS.search(record["title"] + " " + record["number"])]
+    auto_added = update_auto_index(candidates)
     current_statuses = knowledge_base_statuses()
     previous_statuses = state.get("knowledgeBaseStatuses", {})
     status_changes = [
@@ -131,9 +149,7 @@ def main() -> int:
     (run_dir / "待核验候选制度.json").write_text(json.dumps(candidates, ensure_ascii=False, indent=2), encoding="utf-8")
 
     lines = ["# 非车合规知识库｜周度更新候选", "", f"运行时间：{now.isoformat(timespec='seconds')}", "来源：国家金融监督管理总局官网公开栏目（仅抓取最近五页/栏目）。", ""]
-    if first_run:
-        lines += ["本次为基线初始化：已保存当前官网快照；从下一次成功运行起报告新增文件。", "", "请人工核验候选文件的适用范围、效力状态、全文及与现有制度的替代关系后，再纳入正式知识库。"]
-    elif not candidates and not status_changes:
+    if not candidates and not status_changes:
         lines += ["本周未发现标题或文号命中个人非车险合规范围的新增候选。", "", "仍请留意地方金融监管局、国务院及其他部门发布的跨领域文件；它们不在本次总局栏目扫描范围内。"]
     else:
         if status_changes:
@@ -141,18 +157,17 @@ def main() -> int:
             for item in status_changes:
                 lines += [f"- [{item['title']}]({item['url']})：{item['previousStatus']} → {item['status']}（施行信息：{item['effective']}）"]
             lines += [""]
-        lines += [f"本周发现 {len(candidates)} 项待核验候选（已从 {len(new_records)} 项官网新增记录中按关键词筛选）：", ""]
+        lines += [f"本周发现 {len(candidates)} 项官方新增文件（已从 {len(new_records)} 项官网新增记录中按关键词筛选）：", ""]
         for item in candidates:
             lines += [f"- [{item['title']}]({item['url']})", f"  - {item['number'] or '文号待核'}｜{item['publishDate'] or '发布日期待核'}｜{item['itemName']}"]
-        lines += ["", "以上为发现清单，不代表已纳入正式库或已完成法律效力判断。"]
+        lines += ["", f"其中 {auto_added} 项已自动进入公开制度库的“监管官网自动收录”目录；后续补充适用范围、条文解读和替代关系。"]
     (run_dir / "周度更新报告.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     state.update({"seenDocIds": sorted(set(seen) | set(current)), "knowledgeBaseStatuses": current_statuses, "lastSuccessfulRun": now.isoformat(), "lastRunDirectory": str(run_dir.relative_to(ROOT))})
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(json.dumps({"firstRun": first_run, "scanned": len(current), "new": len(new_records), "candidates": len(candidates), "statusChanges": len(status_changes), "report": str(run_dir / "周度更新报告.md")}, ensure_ascii=False))
+    print(json.dumps({"firstRun": first_run, "scanned": len(current), "new": len(new_records), "candidates": len(candidates), "autoAdded": auto_added, "statusChanges": len(status_changes), "report": str(run_dir / "周度更新报告.md")}, ensure_ascii=False))
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
