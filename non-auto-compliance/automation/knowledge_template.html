@@ -22,19 +22,15 @@
 <aside class="side" aria-label="制度分类">
   <div class="brand"><div class="brand-icon" style="flex-shrink:0"><svg width="23" height="27" viewBox="0 0 24 28" fill="none" aria-hidden="true"><path d="M4 2h12l4 4v20H4V2Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 2v6h5M8 12h8M8 16h8M8 20h5" stroke="currentColor" stroke-width="1.5"/></svg></div><div><strong style="white-space:nowrap;font-size:16px;letter-spacing:1px">个人非车知识库</strong><small>PERSONAL LINES</small></div></div>
   <div class="side-label">制度目录 · DIRECTORY</div><nav id="categoryNav" aria-label="按主题筛选"></nav>
-  <div class="side-bottom"><b>财险总公司 / 产品管理视角</b>公开来源整理版<br>全国核心规则 + 专项适用边界<br>检索截至 2026.09.22</div>
+  <div class="side-bottom"><b>财险总公司 / 产品管理视角</b>公开来源整理版<br>全国核心规则 + 专项适用边界<br><span class="as-of"></span></div>
 </aside>
 <div class="workspace">
-  <header class="topbar"><div class="breadcrumb">产品管理 <span>/</span> 公开制度知识库</div><div class="date"><span class="dot" aria-hidden="true"></span>检索截至 2026.09.22</div></header>
+  <header class="topbar"><div class="breadcrumb">产品管理 <span>/</span> 公开制度知识库</div><div class="date"><span class="dot" aria-hidden="true"></span><span class="as-of"></span></div></header>
   <main class="container" id="main">
-    <div class="print-heading">个人非车险管理制度知识库 · 2026年9月22日制度审查版</div>
-    <section class="hero" aria-labelledby="pageTitle"><div class="eyebrow">PRODUCT GOVERNANCE & REGULATORY LIBRARY</div><div class="hero-title"><h1 id="pageTitle">个人非车险管理制度知识库</h1><span class="edition">September 2026</span></div><p class="intro">供财险总公司个人非车险产品管理查阅。可按主题或产品检索制度，查看业务解读、管理建议及官方原文。</p><div class="stats" id="stats"></div></section>
+    <div class="print-heading" id="printHeading"></div>
+    <section class="hero" aria-labelledby="pageTitle"><div class="eyebrow">PRODUCT GOVERNANCE & REGULATORY LIBRARY</div><div class="hero-title"><h1 id="pageTitle">个人非车险管理制度知识库</h1><span class="edition" id="edition"></span></div><p class="intro">供财险总公司个人非车险产品管理查阅。可按主题或产品检索制度，查看业务解读、管理建议及官方原文。</p><div class="stats" id="stats"></div></section>
     <div class="section-heading latest-heading"><h2>近期重点 <span style="font-weight:400;color:#9cad92;font-size:12px;margin-left:8px">ON THE RADAR</span></h2><p>区分已部署、已施行与待施行</p></div>
-    <section class="latest" aria-label="近期重点制度">
-      <button class="focus-card" data-open="G01"><div class="focus-meta"><span>2026.08 · 治理部署</span><span>G01 ↗</span></div><h3>非车险综合治理行动方案</h3><p>重点检查产品开发、存量产品重新备案、高风险业务和平台费用。</p></button>
-      <button class="focus-card" data-open="G02"><div class="focus-meta"><span>2025.11起 · 已施行</span><span>G02 ↗</span></div><h3>36号文与报行合一</h3><p>核对报备、出单和费用执行情况，区分纯意健险与含财产责任的组合产品。</p></button>
-      <button class="focus-card" data-open="I05"><div class="focus-meta"><span>2026.09.30起 · 已施行</span><span>I05 ↗</span></div><h3>金融产品网络营销新规</h3><p>持续核对平台合作、营销素材、账号授权与客户选择。</p></button>
-    </section>
+    <section class="latest" id="latest" aria-label="近期重点制度"></section>
     <nav class="view-tabs" aria-label="知识库视图"><button class="view-tab active" data-view="library" aria-current="page">制度文件库</button><button class="view-tab" data-view="matrix">附件场景覆盖</button><button class="view-tab" data-view="actions">总公司管理清单</button><button class="view-tab" data-view="gaps">版本与使用说明</button></nav>
     <section class="view-panel" id="view-library" aria-label="制度文件库">
       <div class="search-row"><div class="search-wrap"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.5"/></svg><input id="search" type="search" aria-label="搜索制度" placeholder="搜索名称、文号、规则或业务关键词…" autocomplete="off"><button class="clear-search" id="clearSearch" aria-label="清空搜索" hidden>×</button></div><select id="productFilter" aria-label="按产品筛选"><option value="">全部产品</option></select><select id="kindFilter" aria-label="按资料类型筛选"><option value="">全部资料类型</option></select><select id="statusFilter" aria-label="按状态筛选"><option value="">全部状态</option></select></div>
@@ -46,7 +42,7 @@
     <section class="view-panel" id="view-matrix" hidden aria-label="附件场景覆盖"><div class="panel-head"><div class="eyebrow">ATTACHMENT COVERAGE MAP</div><h2>按附件场景查制度覆盖</h2><p>场景名称取自附件，用于查漏和索引。制度义务以公开正式文件的适用主体、文号和边界为准。</p></div><div class="matrix-list" id="matrixList"></div></section>
     <section class="view-panel" id="view-actions" hidden aria-label="总公司管理清单"><div class="panel-head"><div class="eyebrow">HEAD OFFICE CHECKLIST</div><h2>管理事项与规则依据</h2><p>以下为管理建议，具体义务和时限以所引文件为准。点击文档编号查看依据。</p></div><div class="action-list" id="actionList"></div></section>
     <section class="view-panel" id="view-gaps" hidden aria-label="版本与使用说明"><div class="panel-head"><div class="eyebrow">PUBLIC TEXT EDITION</div><h2>公开原文终稿</h2><p>按管理主题组织公开正式文件，法律、政策及行业标准分别标识。每项资料注明来源和适用范围。</p></div><div class="scope-note" id="coverageSummary"></div></section>
-    <footer class="about"><p><strong>整理范围：</strong><span id="scopeText"></span>按文件提供摘要及原文链接。</p><p><strong>使用口径：</strong>摘要、解读和管理建议供研究参考，适用性以实际产品、正式现行文本及后续监管要求为准。日期按核实精度列示；施行安排按正式文本列示。</p><p><strong>链接说明：</strong>原文链接指向机关、政府或行业组织网站，部分历史页面可能受访问限制。数量为制度与依据的目录条目，法律、政策、标准及地方文件按类型标识。</p><div class="footer-line"><span>PERSONAL LINES / 公开来源整理 · 2026.09.22</span><a href="#main">返回顶部 ↑</a></div></footer>
+    <footer class="about"><p><strong>整理范围：</strong><span id="scopeText"></span>按文件提供摘要及原文链接。</p><p><strong>使用口径：</strong>摘要、解读和管理建议供研究参考，适用性以实际产品、正式现行文本及后续监管要求为准。日期按核实精度列示；施行安排按正式文本列示。</p><p><strong>链接说明：</strong>原文链接指向机关、政府或行业组织网站，部分历史页面可能受访问限制。数量为制度与依据的目录条目，法律、政策、标准及地方文件按类型标识。</p><div class="footer-line"><span id="footerAsOf"></span><a href="#main">返回顶部 ↑</a></div></footer>
   </main>
 </div>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -55,12 +51,21 @@
 'use strict';
 const DATA=JSON.parse(document.getElementById('knowledgeData').textContent);
 const docs=DATA.documents, cats=DATA.meta.categories;
+const asOf=DATA.meta.asOf||'';
+const asOfText=asOf?`更新至 ${asOf.replaceAll('-','.')}`:'更新时间待生成';
+document.querySelectorAll('.as-of').forEach(el=>el.textContent=asOfText);
+const asOfDate=asOf?new Date(`${asOf}T00:00:00`):new Date();
+document.querySelector('#edition').textContent=asOfDate.toLocaleString('en-US',{month:'long',year:'numeric'});
+document.querySelector('#printHeading').textContent=`个人非车险管理制度知识库 · ${asOfText}`;
+document.querySelector('#footerAsOf').textContent=`PERSONAL LINES / 公开来源整理 · ${asOfText}`;
 document.querySelector('.intro').textContent='以管理制度为主体，按正式文件名称、文号和适用范围查阅。产品线用于检索查漏及适用筛选，每项文件提供公开文本及适用范围。';
 const state={category:'',query:'',product:'',status:'',kind:'',sort:'category',view:'library',expanded:false};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statusClass=s=>['待施行','即将施行','边界参考','地方参考'].includes(s)?'caution':'';
 function sourceLabel(d){return d.source==='微信图片副本'?'查看图片副本':d.source==='地方协会转载'?'查看协会转载':d.source==='国家标准官网'?'查看标准官方入口':'查看官方原文'}
+function ruleDate(d){const m=String(d.date||'').match(/\d{4}-\d{2}(?:-\d{2})?/);return m?m[0]:'0000-00-00'}
+function renderLatest(){const priority=docs.filter(d=>d.priority);const pending=priority.filter(d=>['待施行','即将施行','待废止'].includes(d.status));const picked=[...pending,...priority.filter(d=>!pending.includes(d))].sort((a,b)=>ruleDate(b).localeCompare(ruleDate(a))).slice(0,3);$('#latest').innerHTML=picked.map(d=>`<button class="focus-card ${['待施行','即将施行','待废止'].includes(d.status)?'amber':''}" data-open="${esc(d.id)}"><div class="focus-meta"><span>${esc(ruleDate(d))} · ${esc(d.status)}</span><span>${esc(d.id)} ↗</span></div><h3>${esc(d.title)}</h3><p>${esc(d.reading)}</p></button>`).join('')}
 function links(ids){return ids.filter(id=>docs.some(d=>d.id===id)).map(id=>{const d=docs.find(x=>x.id===id);return `<button class="rule-link" data-open="${id}" title="${esc(d.title)}">${id} · ${esc(d.title.length>19?d.title.slice(0,19)+'…':d.title)}</button>`}).join('')}
 function nav(){ $('#categoryNav').innerHTML=[['','全部制度','',docs.length],...cats.map(c=>[c[0],c[1],c[2],docs.filter(d=>d.category===c[0]).length])].map(c=>`<button class="cat-button ${state.category===c[0]?'active':''}" data-category="${c[0]}" ${state.category===c[0]?'aria-current="true"':''}><span class="num">${c[2]||'⌂'}</span><span>${esc(c[1])}</span><span class="count">${c[3]}</span></button>`).join('')}
 function filtered(){const terms=state.query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);return docs.filter(d=>(!state.category||d.category===state.category)&&(!state.product||d.products.includes('通用')||d.products.includes(state.product))&&(!state.status||d.status===state.status)&&(!state.kind||d.kind===state.kind)&&terms.every(t=>JSON.stringify(d).toLocaleLowerCase().includes(t)))}
@@ -76,6 +81,7 @@ function openDoc(id,updateHash=true){if(!docs.some(d=>d.id===id))return;reset();
 let toastTimer;function toast(msg){$('#toast').textContent=msg;$('#toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').hidden=true,3200)}
 async function copyCitation(id){const d=docs.find(x=>x.id===id);const value=`${d.title}（${d.number}）。${d.issuer}，${d.date}。${d.url}（检索整理：${d.verified}；${d.source}；${d.status}）`;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value)}else{const a=document.createElement('textarea');a.value=value;a.style.position='fixed';a.style.left='-9999px';document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();if(!ok)throw Error('copy')}toast('已复制文件名称、文号与来源链接')}catch(e){toast('浏览器未允许复制；可选中文件信息，或复制原文链接。')}}
 $('#stats').innerHTML=`<div class="stat"><strong>${docs.length}</strong><span>项制度及依据</span></div><div class="stat"><strong>${cats.length}</strong><span>个管理主题</span></div><div class="stat"><strong>${DATA.meta.attachment?.groups||DATA.meta.products.length}</strong><span>组附件场景</span></div><div class="stat"><strong>${docs.filter(d=>d.kind==='管理制度').length}</strong><span>项管理制度</span></div>`;
+renderLatest();
 $('#scopeText').textContent=DATA.meta.scope;
 $('#kindFilter').insertAdjacentHTML('beforeend',[...new Set(docs.map(d=>d.kind))].map(k=>`<option>${esc(k)}</option>`).join(''));
 $('#kindFilter').addEventListener('change',e=>{state.kind=e.target.value;render()});
@@ -88,7 +94,7 @@ if(DATA.meta.scenarioCoverage?.length){
   $('#matrixList').innerHTML=DATA.meta.products.map(p=>{const direct=docs.filter(d=>d.products.includes(p));return `<article class="matrix-card"><h3>${esc(p)}</h3><p>专项及直接关联：${direct.length}项；共同适用的通用管理、法律与政策依据：${shared.length}项。</p>${cats.map(c=>{const group=direct.filter(d=>d.category===c[0]);return group.length?`<div class="detail-label">${esc(c[1])}</div><div class="rule-links">${links(group.map(d=>d.id))}</div>`:''}).join('')}<p class="boundary">资料类型与效力分别标识。场景标签表示需要核对的关联范围，不代表文件对所有该类产品无条件适用。</p><button class="rule-link" data-product="${esc(p)}" style="margin-top:12px">筛选该产品的全部相关制度 →</button></article>`}).join('');
 }
 const actions=[
- ['在售产品与版本管理','按备案编号记录条款、费率、销售版本和系统状态，跟踪分批重新备案的安排。产品停用后，继续做好存量保单服务。','产品牵头 · 法律、精算、运营协同',['G01','P01','P02','P03']],
+ ['在售产品与版本管理','按备案编号记录条款、费率、销售版本和系统状态，跟踪分批重新备案的安排。产品停用后，继续做好存量保单服务。2026年11月1日前完成开发管理新旧制度衔接。','产品牵头 · 法律、精算、运营协同',['G01','P01','P02','P03','P07']],
  ['费用与报备执行检查','核对备案参数、出单规则、渠道结算与财务凭证是否一致，检查虚列服务费问题，并抽查特约、批单和客户信息。','产品、精算、渠道、财务、运营',['G02','S04','G01']],
  ['定价回溯与亏损管理','按产品和风险类别分析保费、赔付、费用及准备金，查明与定价预期的偏差。达到专项规则规定的条件时，调整费率并重新报备，保存整改依据。','精算牵头 · 产品、理赔协同',['P04','P05','H01','H05']],
  ['渠道、销售与营销审查','检查资质、账号授权、营销素材、页面及操作记录，排查强制搭售和不合理平台费，并持续落实已施行的网络营销新规。','渠道、消保、合规、产品',['S01','S02','I01','I04','I05']],
@@ -106,4 +112,3 @@ render();if(location.hash)openDoc(location.hash.slice(1),false);
 </script>
 </body>
 </html>
-
