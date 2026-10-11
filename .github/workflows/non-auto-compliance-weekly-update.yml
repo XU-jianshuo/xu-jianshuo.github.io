@@ -26,12 +26,14 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install -r non-auto-compliance/automation/requirements.txt
-      - name: Rebuild and review official updates
+      - name: Rebuild knowledge base
         working-directory: non-auto-compliance/automation
         run: |
           python build_knowledge.py
-          python weekly_regulation_update.py
           cp 个人非车险合规知识库.html ../index.html
+      - name: Review official updates
+        working-directory: non-auto-compliance/automation
+        run: python weekly_regulation_update.py
       - name: Commit updated library and review record
         run: |
           git config user.name 'github-actions[bot]'
