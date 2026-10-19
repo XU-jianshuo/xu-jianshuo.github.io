@@ -289,7 +289,7 @@
     "998692",
     "999118"
   ],
-  "lastSuccessfulRun": "2026-10-12T07:00:40.820528+00:00",
+  "lastSuccessfulRun": "2026-10-19T05:47:52.370036+00:00",
   "knowledgeBaseStatuses": {
     "G01": {
       "title": "关于印发《非车险综合治理行动方案》的通知",
@@ -748,209 +748,83 @@
       "url": "https://jrjgj.gz.gov.cn/gkmlpt/content/10/10739/post_10739792.html"
     },
     "A01": {
-      "title": "学生伤害事故处理办法（2010年修正）",
-      "status": "现行有效",
-      "effective": "2002-09-01；2010-12-13修正",
-      "url": "https://www.moe.gov.cn/srcsite/A02/s5911/moe_621/200206/t20020625_81855.html"
-    },
-    "A02": {
-      "title": "关于推行校方责任保险完善校园伤害事故风险管理机制的通知",
-      "status": "执行中",
-      "effective": "2008-04-03",
-      "url": "https://www.moe.gov.cn/s78/A17/s7059/201410/t20141021_178896.html"
-    },
-    "A03": {
-      "title": "教育部等11部门关于推进中小学生研学旅行的意见",
-      "status": "现行有效",
-      "effective": "2016-11-30",
-      "url": "https://www.moe.gov.cn/srcsite/A06/s3325/201612/t20161219_292354.html"
-    },
-    "A04": {
-      "title": "中华人民共和国疫苗管理法",
-      "status": "现行有效",
-      "effective": "2019-12-01",
-      "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_dde03480953841a5912c864dc29003d0.html"
-    },
-    "A05": {
-      "title": "关于开展老年人意外伤害保险工作的指导意见",
-      "status": "执行中",
-      "effective": "2016-04-14",
-      "url": "https://www.nhc.gov.cn/lljks/c100158/201605/19beef43f9f448648f8c3422b54c7d58.shtml"
-    },
-    "A06": {
-      "title": "志愿服务条例",
-      "status": "现行有效",
-      "effective": "2017-12-01",
-      "url": "https://www.beijing.gov.cn/zhengce/gwywj/201905/t20190522_60553.html"
-    },
-    "A07": {
-      "title": "关于维护新就业形态劳动者劳动保障权益的指导意见",
-      "status": "执行中",
-      "effective": "2021-07-16",
-      "url": "https://www.mem.gov.cn/gk/zfxxgkpt/fdzdgknr/202201/t20220119_406920.shtml"
-    },
-    "A08": {
-      "title": "中国银保监会 中国人民银行关于进一步促进信用卡业务规范健康发展的通知",
-      "status": "执行中",
-      "effective": "2022-07-08",
-      "url": "https://app.www.gov.cn/govdata/gov/202207/08/487012/article.html"
-    },
-    "A09": {
-      "title": "体育赛事活动管理办法",
-      "status": "现行有效",
-      "effective": "2023-01-01",
-      "url": "https://www.sport.gov.cn/n315/n20001395/c25071703/content.html"
-    },
-    "A10": {
-      "title": "公共航空运输旅客服务管理规定",
-      "status": "现行有效",
-      "effective": "2021-09-01",
-      "url": "https://xxgk.mot.gov.cn/jigou/fgs/202103/t20210315_3530413.html"
-    },
-    "A11": {
-      "title": "学校招收和培养国际学生管理办法",
-      "status": "现行有效",
-      "effective": "2017-07-01",
-      "url": "https://www.moe.gov.cn/jyb_xxgk/xxgk/zhengce/guizhang/202112/t20211206_585055.html"
-    },
-    "A12": {
-      "title": "旅游安全管理办法",
-      "status": "现行有效",
-      "effective": "2016-12-01",
-      "url": "https://zwgk.mct.gov.cn/zfxxgkml/zcfg/bmgz/202012/t20201204_905328.html"
-    },
-    "A13": {
-      "title": "银行保险机构许可证管理办法",
-      "status": "现行有效",
-      "effective": "2026-06-01",
-      "url": "https://www.nfra.gov.cn/cn/view/pages/governmentDetail.html?docId=1248393&generaltype=1&itemId=861"
-    },
-    "A14": {
-      "title": "中华人民共和国道路运输条例（2026年修订）",
-      "status": "现行有效",
-      "effective": "2026-03-20（本次修订）",
-      "url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1806"
-    },
-    "A15": {
-      "title": "道路货物运输及站场管理规定（2026年修正）",
-      "status": "现行有效",
-      "effective": "2026-03-20",
-      "url": "https://xxgk.mot.gov.cn/jigou/fgs/202602/t20260213_4200284.html"
-    },
-    "A16": {
-      "title": "交通运输部 国家税务总局关于印发《网络货运承运平台经营管理办法》的通知",
-      "status": "执行中",
-      "effective": "2026-01-23（印发之日起）",
-      "url": "https://xxgk.mot.gov.cn/xzgfxwj/202601/t20260126_4199002.html"
-    },
-    "A17": {
-      "title": "道路旅客运输及客运站管理规定（2023年修正）",
-      "status": "现行有效",
-      "effective": "2023-11-10（本次修改自公布日起）",
-      "url": "https://xxgk.mot.gov.cn/2020/gz/202312/t20231208_3964373.html"
-    },
-    "A18": {
-      "title": "住房租赁条例",
-      "status": "现行有效",
-      "effective": "2025-09-15",
-      "url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1774"
-    },
-    "A19": {
-      "title": "国家金融监督管理总局关于推动绿色保险高质量发展的指导意见",
-      "status": "政策指导",
-      "effective": "自发布后执行",
-      "url": "https://app.www.gov.cn/govdata/gov/202404/26/514328/article.html"
-    },
-    "A20": {
-      "title": "工业和信息化部 公安部 市场监管总局 国家消防救援局关于强化电动自行车强制性国家标准实施 加快新产品供应的意见",
-      "status": "现行有效",
-      "effective": "按正式意见实施；新国标生产实施节点2025-09-01、销售过渡截止2025-11-30",
-      "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20257/9af339fb9bed4500be1b9bc717d034c0.pdf"
-    },
-    "A21": {
       "title": "国家金融监督管理总局关于推进普惠保险高质量发展的指导意见",
       "status": "政策指导",
       "effective": "2024-05-29",
       "url": "https://app.www.gov.cn/govdata/gov/202406/07/515861/article.html"
     },
-    "A22": {
+    "A02": {
       "title": "中国银保监会 中国人民银行关于加强新市民金融服务工作的通知",
       "status": "政策指导",
       "effective": "2022-03-04",
       "url": "https://www.safe.gov.cn/shanghai/2022/0311/1734.html"
     },
-    "A23": {
+    "A03": {
       "title": "促进和规范数据跨境流动规定",
       "status": "执行中",
       "effective": "2024-03-22",
       "url": "https://www.cac.gov.cn/2024-03/22/c_1712776611775634.htm"
     },
-    "A24": {
+    "A04": {
       "title": "中华人民共和国政府采购法（2014年修正）",
       "status": "现行有效",
       "effective": "2003-01-01；2014-08-31修正",
       "url": "https://www.beijing.gov.cn/gate/big5/www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/201908/t20190808_779843.html"
     },
-    "A25": {
+    "A05": {
       "title": "政府购买服务管理办法",
       "status": "现行有效",
       "effective": "2020-03-01",
       "url": "https://m.mof.gov.cn/czxw/202001/t20200122_3463449.htm"
     },
-    "A26": {
+    "A06": {
       "title": "财政部关于印发中央本级政府购买服务指导性目录的通知",
       "status": "现行有效",
       "effective": "2020-12-22",
       "url": "https://www.mof.gov.cn/gkml/caizhengwengao/wg2021/wg202101/202106/t20210604_3714678.htm"
     },
-    "A27": {
+    "A07": {
       "title": "中国保监会关于促进团体保险健康发展有关问题的通知",
       "status": "执行中",
       "effective": "自下发之日起施行",
       "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359810&itemId=928"
     },
-    "A28": {
+    "A08": {
       "title": "保险公司管理规定",
       "status": "执行中",
       "effective": "2009-10-01",
       "url": "https://www.nfra.gov.cn/chinese/docfile/2025/0080c3da9e8646bcb1ab668bfb1d63e1.doc"
     },
-    "A29": {
+    "A09": {
       "title": "人身保险公司保险条款和保险费率管理办法",
       "status": "执行中",
       "effective": "2011-12-30",
       "url": "https://www.nfra.gov.cn/chinese/docfile/2025/5d5991bbea7e4affb0e39fb88e1b64f4.doc"
     },
-    "A30": {
+    "A10": {
       "title": "人身保险电话销售业务管理办法",
       "status": "执行中",
       "effective": "2013-04-25",
       "url": "https://www.nfra.gov.cn/chinese/docfile/2025/4130d535ba6849feae2aec779d860257.doc"
     },
-    "A31": {
+    "A11": {
       "title": "中国保监会关于规范人身保险公司赠送保险有关行为的通知",
       "status": "执行中",
       "effective": "2015-04-01",
       "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359809&itemId=928"
     },
-    "A32": {
+    "A12": {
       "title": "中国保监会关于严格规范非保险金融产品销售的通知",
       "status": "执行中",
       "effective": "自发布后执行",
       "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=365120&itemId=928"
     },
-    "A33": {
+    "A13": {
       "title": "中国保监会关于父母为其未成年子女投保以死亡为给付保险金条件人身保险有关问题的通知",
       "status": "执行中",
       "effective": "2016-01-01",
       "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359816&itemId=928"
-    },
-    "R01": {
-      "title": "非车险综合治理有关问答（一）〔图片副本〕",
-      "status": "影印留存",
-      "effective": "配合36号文及非车险综合治理工作执行",
-      "url": "https://my.feishu.cn/file/ToznbQTmeoSJH0xJNjgcJfuCndc"
     }
   },
-  "lastRunDirectory": "output/weekly_updates/2026-10-12"
+  "lastRunDirectory": "output/weekly_updates/2026-10-19"
 }
