@@ -289,7 +289,7 @@
     "998692",
     "999118"
   ],
-  "lastSuccessfulRun": "2026-10-19T05:47:52.370036+00:00",
+  "lastSuccessfulRun": "2026-10-26T05:48:42.205229+00:00",
   "knowledgeBaseStatuses": {
     "G01": {
       "title": "关于印发《非车险综合治理行动方案》的通知",
@@ -826,5 +826,5 @@
       "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359816&itemId=928"
     }
   },
-  "lastRunDirectory": "output/weekly_updates/2026-10-19"
+  "lastRunDirectory": "output/weekly_updates/2026-10-26"
 }
