@@ -203,6 +203,7 @@
     "1274236",
     "1277118",
     "1277241",
+    "1278317",
     "149161",
     "178636",
     "180252",
@@ -291,7 +292,7 @@
     "998692",
     "999118"
   ],
-  "lastSuccessfulRun": "2026-11-02T07:19:59.738656+00:00",
+  "lastSuccessfulRun": "2026-11-09T07:41:19.272232+00:00",
   "knowledgeBaseStatuses": {
     "G01": {
       "title": "关于印发《非车险综合治理行动方案》的通知",
@@ -331,13 +332,13 @@
     },
     "P03": {
       "title": "财产保险公司保险产品开发指引",
-      "status": "待废止",
+      "status": "已废止",
       "effective": "2017-01-01；2026-11-01废止",
       "url": "https://jrj.sh.gov.cn/YWTBZCCX166/20170104/0031-148640.html"
     },
     "P07": {
       "title": "财产保险公司保险产品开发管理规定",
-      "status": "待施行",
+      "status": "执行中",
       "effective": "2026-11-01",
       "url": "https://www.nfra.gov.cn/cn/view/pages/governmentDetail.html?docId=1274236&generaltype=1&itemId=861"
     },
@@ -828,5 +829,5 @@
       "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=359816&itemId=928"
     }
   },
-  "lastRunDirectory": "output/weekly_updates/2026-11-02"
+  "lastRunDirectory": "output/weekly_updates/2026-11-09"
 }
